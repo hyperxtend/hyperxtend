@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../components/nav-bar';
 import SkillsSection from '../components/skill-tiles/component';
 import styled from 'styled-components';
+import LandingPage from '../pages/landing-page';
 
 const Container = styled.div`
   margin: 0;
@@ -16,6 +17,13 @@ const SiteContainer = styled.div`
 
 const App = () => {
   const [toggle, toggleNav] = React.useState(false);
+
+  const [isLanding, setIsLanding] = React.useState(true);
+
+  if (isLanding) {
+    setTimeout(() => setIsLanding(false), 3500);
+    return <LandingPage text="hello!" />;
+  }
 
   return (
     <Container>
