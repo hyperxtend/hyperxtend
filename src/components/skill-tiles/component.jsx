@@ -10,21 +10,22 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BsStarHalf } from 'react-icons/bs';
 import { SiTypescript } from 'react-icons/si';
 import './component.css';
+import { HYPERXTEND_GITHUB_PROFILE } from '../../global';
 
 const SkillsSection = () => {
   return (
-    <section class="section">
-      <div class="wall">
-        <div class="v-boxes">
-          <div class="box">
-            <span class="tooltip">PHP</span>
-            <div class="box-face">
-              <div class="box-text">
+    <section className="section">
+      <div className="wall">
+        <div className="v-boxes">
+          <div className="box">
+            <span className="tooltip">PHP</span>
+            <div className="box-face">
+              <div className="box-text">
                 <FaPhp />
               </div>
             </div>
-            <div class="box-back">
-              <div class="box-text">
+            <div className="box-back">
+              <div className="box-text">
                 <AiFillStar />
                 <AiFillStar />
                 <AiFillStar />
@@ -33,15 +34,15 @@ const SkillsSection = () => {
               </div>
             </div>
           </div>
-          <div class="box">
-            <span class="tooltip">Git</span>
-            <div class="box-face">
-              <div class="box-text">
+          <div className="box">
+            <span className="tooltip">Git</span>
+            <div className="box-face">
+              <div className="box-text">
                 <FaGitAlt />
               </div>
             </div>
-            <div class="box-back">
-              <div class="box-text">
+            <div className="box-back">
+              <div className="box-text">
                 <AiFillStar />
                 <AiFillStar />
                 <AiFillStar />
@@ -50,15 +51,15 @@ const SkillsSection = () => {
               </div>
             </div>
           </div>
-          <div class="box">
-            <span class="tooltip">TypeScript</span>
-            <div class="box-face">
-              <div class="box-text">
+          <div className="box">
+            <span className="tooltip">TypeScript</span>
+            <div className="box-face">
+              <div className="box-text">
                 <SiTypescript />
               </div>
             </div>
-            <div class="box-back">
-              <div class="box-text">
+            <div className="box-back">
+              <div className="box-text">
                 <AiFillStar />
                 <AiFillStar />
                 <AiFillStar />
@@ -67,15 +68,15 @@ const SkillsSection = () => {
               </div>
             </div>
           </div>
-          <div class="box">
-            <span class="tooltip">Python</span>
-            <div class="box-face">
-              <div class="box-text">
+          <div className="box">
+            <span className="tooltip">Python</span>
+            <div className="box-face">
+              <div className="box-text">
                 <FaPython />
               </div>
             </div>
-            <div class="box-back">
-              <div class="box-text">
+            <div className="box-back">
+              <div className="box-text">
                 <AiFillStar />
                 <AiFillStar />
                 <BsStarHalf />
@@ -85,16 +86,16 @@ const SkillsSection = () => {
             </div>
           </div>
         </div>
-        <div class="v-boxes second">
-          <div class="box">
-            <span class="tooltip">React</span>
-            <div class="box-face">
-              <div class="box-text">
+        <div className="v-boxes second">
+          <div className="box">
+            <span className="tooltip">React</span>
+            <div className="box-face">
+              <div className="box-text">
                 <FaReact />
               </div>
             </div>
-            <div class="box-back">
-              <div class="box-text">
+            <div className="box-back">
+              <div className="box-text">
                 <AiFillStar />
                 <AiFillStar />
                 <AiFillStar />
@@ -103,15 +104,15 @@ const SkillsSection = () => {
               </div>
             </div>
           </div>
-          <div class="box">
-            <span class="tooltip">HTML</span>
-            <div class="box-face">
-              <div class="box-text">
-                <i class="fab fa-html5"></i>
+          <div className="box">
+            <span className="tooltip">HTML</span>
+            <div className="box-face">
+              <div className="box-text">
+                <i className="fab fa-html5"></i>
               </div>
             </div>
-            <div class="box-back">
-              <div class="box-text">
+            <div className="box-back">
+              <div className="box-text">
                 <AiFillStar />
                 <AiFillStar />
                 <AiFillStar />
@@ -120,15 +121,15 @@ const SkillsSection = () => {
               </div>
             </div>
           </div>
-          <div class="box">
-            <span class="tooltip">NodeJs</span>
-            <div class="box-face">
-              <div class="box-text">
-                <i class="fab fa-node-js"></i>
+          <div className="box">
+            <span className="tooltip">NodeJs</span>
+            <div className="box-face">
+              <div className="box-text">
+                <i className="fab fa-node-js"></i>
               </div>
             </div>
-            <div class="box-back">
-              <div class="box-text">
+            <div className="box-back">
+              <div className="box-text">
                 <AiFillStar />
                 <AiFillStar />
                 <AiFillStar />
@@ -138,16 +139,16 @@ const SkillsSection = () => {
             </div>
           </div>
         </div>
-        <div class="v-boxes third">
-          <div class="box">
-            <span class="tooltip">JavaScript</span>
-            <div class="box-face">
-              <div class="box-text">
-                <i class="fab fa-js-square"></i>
+        <div className="v-boxes third">
+          <div className="box">
+            <span className="tooltip">JavaScript</span>
+            <div className="box-face">
+              <div className="box-text">
+                <i className="fab fa-js-square"></i>
               </div>
             </div>
-            <div class="box-back">
-              <div class="box-text">
+            <div className="box-back">
+              <div className="box-text">
                 <AiFillStar />
                 <AiFillStar />
                 <AiFillStar />
@@ -156,15 +157,15 @@ const SkillsSection = () => {
               </div>
             </div>
           </div>
-          <div class="box">
-            <span class="tooltip">CSS</span>
-            <div class="box-face">
-              <div class="box-text">
-                <i class="fab fa-css3-alt"></i>
+          <div className="box">
+            <span className="tooltip">CSS</span>
+            <div className="box-face">
+              <div className="box-text">
+                <i className="fab fa-css3-alt"></i>
               </div>
             </div>
-            <div class="box-back">
-              <div class="box-text">
+            <div className="box-back">
+              <div className="box-text">
                 <AiFillStar />
                 <AiFillStar />
                 <AiFillStar />
@@ -174,14 +175,16 @@ const SkillsSection = () => {
             </div>
           </div>
         </div>
-        <div class="v-boxes forth">
-          <div class="box link">
-            <div class="box-face">
-              <div class="box-text">
-                <FaGithubAlt />
+        <div className="v-boxes forth">
+          <a href={HYPERXTEND_GITHUB_PROFILE} target="_blank" rel="noreferrer">
+            <div className="box link">
+              <div className="box-face">
+                <div className="box-text">
+                  <FaGithubAlt />
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
