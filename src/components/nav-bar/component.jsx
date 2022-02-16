@@ -150,7 +150,6 @@ const StyledImageLogo = styled.img`
 `;
 
 const NavContainer = styled.div`
-  border: solid 2px red;
   width: 100%;
   height: 50px;
   position: -webkit-sticky;
