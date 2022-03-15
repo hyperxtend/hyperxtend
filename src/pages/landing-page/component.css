@@ -2,7 +2,6 @@
 .word {
   font-family: 'Anton', sans-serif;
   perspective: 1000px;
-  border: 2px solid red;
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -10,8 +9,8 @@
   justify-content: center;
   align-items: center;
   letter-spacing: 5px;
-  color: white;
-  background-color: black;
+  color: rgba(246, 247, 247, 0.95);
+  background-color: rgba(27, 28, 28, 0.95);
 }
 .word span {
   cursor: pointer;

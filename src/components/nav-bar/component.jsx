@@ -64,7 +64,15 @@ const Item = styled.span`
     transform: scale(0);
     transform-origin: right;
     transition: transform 1s cubic-bezier(0.83, 0.01, 0.29, 1);
-    background: linear-gradient(90deg, #ff3333, #2200b9);
+    background: linear-gradient(
+      90deg,
+      #ff6663,
+      #feb144,
+      #fdfd97,
+      #9ee093,
+      #9ec1cf,
+      #cc99c9
+    );
   }
 
   &:hover:after {
@@ -113,7 +121,7 @@ const Overlay = styled.div`
   position: ${({ open }) => (open ? 'inherit' : 'absolute')};
   height: ${({ open }) => (open ? '91vh' : 0)};
   width: 100%;
-  background: rgba(38, 38, 38, 0.89);
+  background: rgba(30, 30, 30, 0.99);
   opacity: 0.8;
   transition: height 0.4s ease-in-out;
 
@@ -157,6 +165,27 @@ const NavContainer = styled.div`
   top: 0;
 `;
 
+const StyledWrapper = styled.div`
+  border: 5px dotted blue;
+`;
+
+const NavMenuItems = () => (
+  <>
+    <Item>
+      <Link>About</Link>
+    </Item>
+    <Item>
+      <Link>Portfolio</Link>
+    </Item>
+    <Item>
+      <Link>Skills</Link>
+    </Item>
+    <Item>
+      <Link>Contact</Link>
+    </Item>
+  </>
+);
+
 const Header = ({ toggle, toggleNav }) => {
   return (
     <NavContainer>
@@ -165,18 +194,7 @@ const Header = ({ toggle, toggleNav }) => {
           <StyledImageLogo src={HyperxtendLogo} alt="hyperxtend-logo" />
         </Logo>
         <Menu>
-          <Item>
-            <Link>Home</Link>
-          </Item>
-          <Item>
-            <Link>About</Link>
-          </Item>
-          <Item>
-            <Link>Portfolio</Link>
-          </Item>
-          <Item>
-            <Link>Contact</Link>
-          </Item>
+          <NavMenuItems />
         </Menu>
         <NavIcon onClick={() => toggleNav(!toggle)}>
           <Line open={toggle} />
@@ -186,18 +204,7 @@ const Header = ({ toggle, toggleNav }) => {
       </Nav>
       <Overlay open={toggle}>
         <OverlayMenu open={toggle}>
-          <Item>
-            <Link>Home</Link>
-          </Item>
-          <Item>
-            <Link>About</Link>
-          </Item>
-          <Item>
-            <Link>Portfolio</Link>
-          </Item>
-          <Item>
-            <Link>Contact</Link>
-          </Item>
+          <NavMenuItems />
         </OverlayMenu>
       </Overlay>
     </NavContainer>

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../components/nav-bar';
-import SkillsSection from '../components/skill-tiles/component';
+import SkillsSection from '../components/skill-tiles';
+import ContactFooter from '../components/contact-footer';
 import styled from 'styled-components';
 import LandingPage from '../pages/landing-page';
 
@@ -21,7 +22,7 @@ const App = () => {
   const [isLanding, setIsLanding] = React.useState(true);
 
   if (isLanding) {
-    setTimeout(() => setIsLanding(false), 3500);
+    setTimeout(() => setIsLanding(false), 3600);
     return <LandingPage text="hello!" />;
   }
 
