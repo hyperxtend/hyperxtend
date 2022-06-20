@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import HyperxtendLogo from '../../assets/hyperxtend.png';
+import AlexLogo from '../../assets/alex-logo.png';
 
 const Nav = styled.nav`
   padding: 0 20px;
@@ -10,11 +10,6 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-`;
-
-const Logo = styled.h1`
-  font-size: 25px;
-  color: white;
 `;
 
 const Menu = styled.ul`
@@ -40,17 +35,9 @@ const Item = styled.span`
 
   animation: float infinite ease-in;
 
-  @keyframe float {
-    to {
-      transform: translateY(10px);
-    }
-    from {
-      transform: translateY(-10px);
-    }
-  }
-
   &:hover {
     color: #fff;
+    transform: translateY(-3px);
   }
 
   &:after {
@@ -121,8 +108,7 @@ const Overlay = styled.div`
   position: ${({ open }) => (open ? 'inherit' : 'absolute')};
   height: ${({ open }) => (open ? '91vh' : 0)};
   width: 100%;
-  background: rgba(30, 30, 30, 0.99);
-  opacity: 0.8;
+  background: rgb(28, 28, 28, 0.9);
   transition: height 0.4s ease-in-out;
 
   @media (min-width: 769px) {
@@ -151,10 +137,15 @@ const OverlayMenu = styled.ul`
 `;
 
 const StyledImageLogo = styled.img`
-  width: 65%;
-  height: 35%;
+  width: 15%;
   margin: 0.5rem;
   padding: 1rem;
+  @media (max-width: 1250px) {
+    width: 30%;
+  }
+  @media (max-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const NavContainer = styled.div`
@@ -163,10 +154,7 @@ const NavContainer = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-`;
-
-const StyledWrapper = styled.div`
-  border: 5px dotted blue;
+  z-index: 10;
 `;
 
 const NavMenuItems = () => (
@@ -190,9 +178,7 @@ const Header = ({ toggle, toggleNav }) => {
   return (
     <NavContainer>
       <Nav>
-        <Logo>
-          <StyledImageLogo src={HyperxtendLogo} alt="hyperxtend-logo" />
-        </Logo>
+        <StyledImageLogo src={AlexLogo} alt="hyperxtend-logo" />
         <Menu>
           <NavMenuItems />
         </Menu>
