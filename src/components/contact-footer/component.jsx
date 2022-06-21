@@ -17,7 +17,7 @@ const ContactLink = ({ icon, linkTo }) => (
 
 const ContactFooter = () => {
   return (
-    <div class="flex-center">
+    <div className="flex-center">
       <ContactLink icon="fa fa-github fa-3x icon-3d" linkTo={GITHUB_PROFILE} />
       <ContactLink
         icon="fa fa-linkedin fa-3x icon-3d"
