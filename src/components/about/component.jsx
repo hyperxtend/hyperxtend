@@ -10,6 +10,7 @@ import {
   TUMBLR_PROFILE,
   INSTAGRAM_PROFILE,
 } from '../../global';
+
 const StyledImage = styled.img`
   filter: grayscale(100%) brightness(65%);
   transition: transform 0.8s, filter 0.8s ease-in-out;
@@ -24,14 +25,44 @@ const IconsContainer = styled.div`
   fill: #fff;
   color: #fff;
   height: 130px;
-  top: 200px;
+  top: 150px;
+  left: 10px;
   width: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  i {
-    margin-top: 10px;
+`;
+
+const StyledLink = styled.a`
+  color: #fff;
+  padding-top: 25px;
+  &:hover {
+    height: 60px;
+    width: 60px;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: sticky;
+    text-decoration: none;
+    padding-bottom: 50px;
+  }
+  &:hover:nth-child(1) {
+    background-color: #000;
+  }
+  &:hover:nth-child(2) {
+    background-color: #1da1f2;
+  }
+  &:hover:nth-child(3) {
+    background-color: #0a66c2;
+  }
+  &:hover:nth-child(4) {
+    background-color: #c32aa3;
+  }
+  &:hover:nth-child(5) {
+    background-color: #35465d;
   }
 `;
 const DetailsContainer = styled.div`
@@ -65,21 +96,46 @@ const About = () => {
             alt="image-of-me"
           />
           <IconsContainer>
-            <a href={GITHUB_PROFILE} target="_blank" rel="noreferrer">
+            <StyledLink
+              href={GITHUB_PROFILE}
+              id="github-icon"
+              target="_blank"
+              rel="noreferrer"
+            >
               <i className="fa fa-github fa-2x" aria-hidden="true"></i>
-            </a>
-            <a href={TWITTER_PROFILE} target="_blank" rel="noreferrer">
+            </StyledLink>
+            <StyledLink
+              href={TWITTER_PROFILE}
+              id="twitter-icon"
+              target="_blank"
+              rel="noreferrer"
+            >
               <i className="fa fa-twitter fa-2x" aria-hidden="true"></i>
-            </a>
-            <a href={LINKEDIN_PROFILE} target="_blank" rel="noreferrer">
+            </StyledLink>
+            <StyledLink
+              href={LINKEDIN_PROFILE}
+              id="linkedin-icon"
+              target="_blank"
+              rel="noreferrer"
+            >
               <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-            </a>
-            <a href={INSTAGRAM_PROFILE} target="_blank" rel="noreferrer">
+            </StyledLink>
+            <StyledLink
+              href={INSTAGRAM_PROFILE}
+              id="insta-icon"
+              target="_blank"
+              rel="noreferrer"
+            >
               <i className="fa fa-instagram fa-2x" aria-hidden="true"></i>
-            </a>
-            <a href={TUMBLR_PROFILE} target="_blank" rel="noreferrer">
+            </StyledLink>
+            <StyledLink
+              href={TUMBLR_PROFILE}
+              id="tumblr-icon"
+              target="_blank"
+              rel="noreferrer"
+            >
               <i className="fa fa-tumblr fa-2x" aria-hidden="true"></i>
-            </a>
+            </StyledLink>
           </IconsContainer>
         </div>
         <div className="about">
