@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBar from '../components/nav-bar';
 import SkillsSection from '../components/skill-tiles';
-import ContactFooter from '../components/contact-footer';
 import styled from 'styled-components';
 import LandingPage from '../pages/landing-page';
 import About from '../components/about';

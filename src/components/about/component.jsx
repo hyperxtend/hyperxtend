@@ -18,7 +18,7 @@ const IconsContainer = styled.div`
   fill: #fff;
   color: #fff;
   height: 130px;
-  top: 70px;
+  top: 200px;
   width: 50px;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,6 @@ const IconsContainer = styled.div`
   }
 `;
 const DetailsContainer = styled.div`
-  border: 3px dotted grey;
   background: #fff;
   max-width: 920px;
   height: 480px;
@@ -54,13 +53,17 @@ const About = () => {
     <DetailsContainer className="container">
       <div className="details-container">
         <div>
-          <StyledImage src={AlexJoshua} className="img-fluid" alt="" />
+          <StyledImage
+            src={AlexJoshua}
+            className="img-fluid"
+            alt="image-of-me"
+          />
           <IconsContainer>
-            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-tumblr fa-2x" aria-hidden="true"></i>
+            <i className="fa fa-github fa-2x" aria-hidden="true"></i>
+            <i className="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+            <i className="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            <i className="fa fa-tumblr fa-2x" aria-hidden="true"></i>
           </IconsContainer>
         </div>
         <div className="about">
