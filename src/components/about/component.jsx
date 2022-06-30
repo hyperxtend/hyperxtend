@@ -3,7 +3,13 @@ import { Button } from 'react-bootstrap';
 import './component.css';
 import AlexJoshua from '../../assets/picture-of-me.jpg';
 import styled from 'styled-components';
-
+import {
+  GITHUB_PROFILE,
+  LINKEDIN_PROFILE,
+  TWITTER_PROFILE,
+  TUMBLR_PROFILE,
+  INSTAGRAM_PROFILE,
+} from '../../global';
 const StyledImage = styled.img`
   filter: grayscale(100%) brightness(65%);
   transition: transform 0.8s, filter 0.8s ease-in-out;
@@ -59,11 +65,21 @@ const About = () => {
             alt="image-of-me"
           />
           <IconsContainer>
-            <i className="fa fa-github fa-2x" aria-hidden="true"></i>
-            <i className="fa fa-twitter fa-2x" aria-hidden="true"></i>
-            <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-            <i className="fa fa-instagram fa-2x" aria-hidden="true"></i>
-            <i className="fa fa-tumblr fa-2x" aria-hidden="true"></i>
+            <a href={GITHUB_PROFILE} target="_blank" rel="noreferrer">
+              <i className="fa fa-github fa-2x" aria-hidden="true"></i>
+            </a>
+            <a href={TWITTER_PROFILE} target="_blank" rel="noreferrer">
+              <i className="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            </a>
+            <a href={LINKEDIN_PROFILE} target="_blank" rel="noreferrer">
+              <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+            </a>
+            <a href={INSTAGRAM_PROFILE} target="_blank" rel="noreferrer">
+              <i className="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            </a>
+            <a href={TUMBLR_PROFILE} target="_blank" rel="noreferrer">
+              <i className="fa fa-tumblr fa-2x" aria-hidden="true"></i>
+            </a>
           </IconsContainer>
         </div>
         <div className="about">
