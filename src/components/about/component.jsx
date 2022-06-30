@@ -15,9 +15,11 @@ import {
 const StyledImage = styled.img`
   filter: grayscale(100%) brightness(65%);
   transition: transform 0.8s, filter 0.8s ease-in-out;
+  transition-delay: 3s;
   transform-origin: center center;
   &:hover {
     filter: grayscale(0%) brightness(100%);
+    transition: 1s ease-in-out;
   }
 `;
 
@@ -83,6 +85,12 @@ const ButtonContainer = styled.div`
   width: 60%;
   button:nth-child(2) {
     margin-left: 10px;
+  }
+`;
+
+const StyledButton = styled(Button)`
+  &:hover {
+    transform: translateY(-3px);
   }
 `;
 
@@ -157,9 +165,9 @@ const About = () => {
             </p>
             <ButtonContainer>
               <a href={CVofAlexJ} download>
-                <Button variant="outline-dark">Download CV</Button>
+                <StyledButton variant="outline-dark">Download CV</StyledButton>
               </a>
-              <Button variant="dark">More about me</Button>
+              <StyledButton variant="dark">More about me</StyledButton>
             </ButtonContainer>
           </div>
         </div>
