@@ -4,6 +4,30 @@ import './component.css';
 import AlexJoshua from '../../assets/picture-of-me.jpg';
 import styled from 'styled-components';
 
+const StyledImage = styled.img`
+  filter: grayscale(100%) brightness(65%);
+  transition: transform 0.8s, filter 0.8s ease-in-out;
+  transform-origin: center center;
+  &:hover {
+    filter: grayscale(0%) brightness(100%);
+  }
+`;
+
+const IconsContainer = styled.div`
+  position: absolute;
+  fill: #fff;
+  color: #fff;
+  height: 130px;
+  top: 70px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  i {
+    margin-top: 10px;
+  }
+`;
 const DetailsContainer = styled.div`
   border: 3px dotted grey;
   background: #fff;
@@ -30,7 +54,14 @@ const About = () => {
     <DetailsContainer className="container">
       <div className="details-container">
         <div>
-          <img src={AlexJoshua} className="img-fluid" alt="" />
+          <StyledImage src={AlexJoshua} className="img-fluid" alt="" />
+          <IconsContainer>
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-tumblr fa-2x" aria-hidden="true"></i>
+          </IconsContainer>
         </div>
         <div className="about">
           <div className="name">

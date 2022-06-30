@@ -8,13 +8,7 @@ import {
   BEHANCE_PROFILE,
 } from '../../global';
 import './component.css';
-
-const ContactLink = ({ icon, linkTo }) => (
-  <a href={linkTo} target="_blank" rel="noreferrer">
-    <i className={icon}></i>
-  </a>
-);
-
+import ContactLink from '../../components/contact-link';
 const ContactFooter = () => {
   return (
     <div className="flex-center">
