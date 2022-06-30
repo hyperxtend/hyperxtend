@@ -160,8 +160,8 @@ const About = () => {
               results driven.
               <br />
               I've always been intrigued by the design & mechanics especially
-              when they add value, simplicity & sustainability within projects &
-              teams.
+              when they add value, simplicity & sustainability within a project
+              & team.
             </p>
             <ButtonContainer>
               <a href={CVofAlexJ} download>
