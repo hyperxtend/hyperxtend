@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import './component.css';
 import AlexJoshua from '../../assets/picture-of-me.jpg';
+import CVofAlexJ from '../../external-file/cv-of-alex-j.docx';
 import styled from 'styled-components';
 import {
   GITHUB_PROFILE,
@@ -155,7 +156,9 @@ const About = () => {
               teams.
             </p>
             <ButtonContainer>
-              <Button variant="outline-dark">Download CV</Button>
+              <a href={CVofAlexJ} download>
+                <Button variant="outline-dark">Download CV</Button>
+              </a>
               <Button variant="dark">More about me</Button>
             </ButtonContainer>
           </div>
