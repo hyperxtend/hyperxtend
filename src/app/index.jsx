@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const SiteContainer = styled.div`
-  margin-top: 95px;
+  margin-top: 30px;
 `;
 
 const App = () => {
