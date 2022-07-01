@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/hyperxtend/static/css/main.96b0cf5d.css",
+    "main.js": "/hyperxtend/static/js/main.6c7f4d5d.js",
+    "static/js/787.140cdc41.chunk.js": "/hyperxtend/static/js/787.140cdc41.chunk.js",
+    "static/media/cv-of-alex-j.docx": "/hyperxtend/static/media/cv-of-alex-j.bf11909196d3862ef3f4.docx",
+    "static/media/picture-of-me.jpg": "/hyperxtend/static/media/picture-of-me.89e299b9919d75146be2.jpg",
+    "static/media/alex-logo.png": "/hyperxtend/static/media/alex-logo.8a9e53f88a3f07937e4e.png",
+    "index.html": "/hyperxtend/index.html",
+    "main.96b0cf5d.css.map": "/hyperxtend/static/css/main.96b0cf5d.css.map",
+    "main.6c7f4d5d.js.map": "/hyperxtend/static/js/main.6c7f4d5d.js.map",
+    "787.140cdc41.chunk.js.map": "/hyperxtend/static/js/787.140cdc41.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96b0cf5d.css",
+    "static/js/main.6c7f4d5d.js"
+  ]
+}
