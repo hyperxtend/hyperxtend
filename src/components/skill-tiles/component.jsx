@@ -13,9 +13,6 @@ import './component.css';
 import { GITHUB_PROFILE } from '../../global';
 import ContactFooter from '../contact-footer';
 
-// other skills to add:
-//  * jQuery
-
 const SkillsSection = () => {
   return (
     <>
