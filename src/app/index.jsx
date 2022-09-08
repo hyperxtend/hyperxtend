@@ -4,6 +4,10 @@ import SkillsSection from '../components/skill-tiles';
 import styled from 'styled-components';
 import LandingPage from '../pages/landing-page';
 import About from '../components/about';
+import ProjectCarousel from '../components/carousel';
+
+import './index.css';
+
 const Container = styled.div`
   margin: 0;
   padding: 0;
@@ -30,6 +34,7 @@ const App = () => {
       {!toggle && (
         <SiteContainer>
           <About />
+          <ProjectCarousel />
           <SkillsSection />
         </SiteContainer>
       )}

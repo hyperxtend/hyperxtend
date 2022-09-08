@@ -1,0 +1,38 @@
+.swiper {
+  width: 70%;
+  height: 80vh;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.swiper-button-prev {
+  border: 3px solid black;
+}
+
+.swiper-3d .swiper-slide-shadow-left {
+  height: 32rem;
+  border-radius: 16px;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+  transform: translate(30px, 0px);
+}
+
+.swiper-3d .swiper-slide-shadow-right {
+  height: 32rem;
+  border-radius: 16px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+}

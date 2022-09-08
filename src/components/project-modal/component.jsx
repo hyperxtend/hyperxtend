@@ -1,5 +1,6 @@
 import Modal from './modal.js';
-
+import './component.css';
+import { Button } from 'react-bootstrap';
 const Project = ({
   projectName,
   projectDescription,
@@ -11,11 +12,19 @@ const Project = ({
   <div className="project">
     <h3 className="project-header">{projectName}</h3>
     <p className="project-body">{projectDescription}</p>
-    <img alt="project" className="project-image" src={projectImage} />
-    <a target="_blank" rel="noopener noreferrer" href={projectURL}>
-      <button className="demo-button btn btn-primary">View Demo</button>
-    </a>
-    <Modal className="modal-overview" title={title} body={body} />
+    <img
+      alt="project"
+      className="project-image d-block w-80 "
+      src={projectImage}
+    />
+    <div className="modal-button-container">
+      <a target="_blank" rel="noopener noreferrer" href={projectURL}>
+        <Button className="demo-button" variant="outline-dark">
+          View Demo
+        </Button>
+      </a>
+      <Modal className="modal-overview" title={title} body={body} />
+    </div>
   </div>
 );
 

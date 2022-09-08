@@ -8,7 +8,7 @@ const OverviewModal = ({ title, body }) => {
 
   return (
     <>
-      <Button className="modal-button" variant="primary" onClick={handleShow}>
+      <Button className="modal-button" variant="dark" onClick={handleShow}>
         About
       </Button>
       <Modal className="modal-overview" show={show} onHide={handleClose}>
