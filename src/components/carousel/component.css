@@ -1,6 +1,6 @@
 .swiper {
   width: 70%;
-  height: 60vh;
+  height: 80vh;
 }
 
 .swiper-slide {
@@ -56,8 +56,8 @@
 
 @media only screen and (max-width: 770px) {
   .swiper {
-    width: 80%;
-    height: 50vh;
+    width: 85%;
+    height: 70vh;
     margin-top: 5rem;
   }
 }

@@ -21,6 +21,11 @@ const StyledImage = styled.img`
     filter: grayscale(0%) brightness(100%);
     transition: 1s ease-in-out;
   }
+
+  @media only screen and (max-width: 766px) {
+    marign-top: 0.5rem
+    width: 80%;
+  }
 `;
 
 const IconsContainer = styled.div`
@@ -35,6 +40,10 @@ const IconsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+
+  @media only screen and (max-width: 766px) {
+    top: 650px;
+  }
 `;
 
 const StyledLink = styled.a`
@@ -73,7 +82,6 @@ const DetailsContainer = styled.div`
   max-width: 920px;
   margin: auto;
   transform: translateY(15%);
-  box-shadow: 0px 0px 6px 0px #222 73;
   width: 100%;
   height: 100%;
 `;

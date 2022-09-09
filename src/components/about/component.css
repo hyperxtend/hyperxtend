@@ -56,7 +56,7 @@
 }
 
 .container .skills-container button:hover {
-  box-shadow: 1px 1px 1px 0px #222 2b;
+  box-shadow: 1px 1px 1px 0px #2222;
 }
 .container .skills-container button:focus,
 .container .skills-container button:active {
@@ -64,11 +64,9 @@
   box-shadow: 1px 1px 10px 0px #222 80;
 }
 @media only screen and (max-width: 766px) {
-  .container {
-    height: auto;
-  }
-  .container .details-container {
-    flex-direction: column;
+  .details-container {
+    display: flex;
+    flex-direction: column-reverse;
   }
   .container .details-container .avatar img {
     width: 300px;
