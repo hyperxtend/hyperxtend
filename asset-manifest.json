@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/hyperxtend/static/css/main.f7f24d38.css",
-    "main.js": "/hyperxtend/static/js/main.f5d55901.js",
+    "main.js": "/hyperxtend/static/js/main.73ae3ea6.js",
     "static/js/787.140cdc41.chunk.js": "/hyperxtend/static/js/787.140cdc41.chunk.js",
     "static/media/project-luma.PNG": "/hyperxtend/static/media/project-luma.321e97ff486d1f2dbb08.PNG",
     "static/media/project-guitar.PNG": "/hyperxtend/static/media/project-guitar.6e95400dddb71a699f37.PNG",
-    "static/media/cv-of-alex-j.docx": "/hyperxtend/static/media/cv-of-alex-j.bf11909196d3862ef3f4.docx",
     "static/media/picture-of-me.jpg": "/hyperxtend/static/media/picture-of-me.89e299b9919d75146be2.jpg",
-    "static/media/alex-logo.png": "/hyperxtend/static/media/alex-logo.8a9e53f88a3f07937e4e.png",
+    "static/media/hyperxtend-header.png": "/hyperxtend/static/media/hyperxtend-header.fa911d1be70bca96a937.png",
     "static/media/project-whether.PNG": "/hyperxtend/static/media/project-whether.f6246ddc2b64bf074840.PNG",
+    "static/media/cv-of-alex-j.docx": "/hyperxtend/static/media/cv-of-alex-j.00ef4314ca8d68ebe586.docx",
     "static/media/project-dotify.PNG": "/hyperxtend/static/media/project-dotify.0579ae2984d59f354201.PNG",
     "index.html": "/hyperxtend/index.html",
     "main.f7f24d38.css.map": "/hyperxtend/static/css/main.f7f24d38.css.map",
-    "main.f5d55901.js.map": "/hyperxtend/static/js/main.f5d55901.js.map",
+    "main.73ae3ea6.js.map": "/hyperxtend/static/js/main.73ae3ea6.js.map",
     "787.140cdc41.chunk.js.map": "/hyperxtend/static/js/787.140cdc41.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f7f24d38.css",
-    "static/js/main.f5d55901.js"
+    "static/js/main.73ae3ea6.js"
   ]
 }
