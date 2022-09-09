@@ -89,9 +89,22 @@ const DetailsContainer = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 60%;
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
   button:nth-child(2) {
     margin-left: 10px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: 6rem;
+    justify-content: space-around;
+    button:nth-child(2) {
+      margin-left: 0px;
+    }
   }
 `;
 
@@ -205,9 +218,11 @@ const About = () => {
               & team.
             </p>
             <ButtonContainer className="about-me-button-container">
-              <a href={CVofAlexJ} download>
-                <StyledButton variant="outline-dark">Download CV</StyledButton>
-              </a>
+              <StyledButton variant="outline-dark">
+                <a href={CVofAlexJ} download>
+                  Download CV
+                </a>
+              </StyledButton>
               <StyledButton variant="dark">More about me</StyledButton>
             </ButtonContainer>
           </div>

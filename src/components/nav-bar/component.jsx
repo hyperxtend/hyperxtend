@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import AlexLogo from '../../assets/alex-logo.png';
+import AlexLogo from '../../assets/hyperxtend-header.png';
 
 const Nav = styled.nav`
   padding: 0 20px;
@@ -137,14 +137,14 @@ const OverlayMenu = styled.ul`
 `;
 
 const StyledImageLogo = styled.img`
-  width: 15%;
-  margin: 0.5rem;
+  width: 20%;
+  height: 30%
   padding: 1rem;
   @media (max-width: 1250px) {
     width: 30%;
   }
   @media (max-width: 768px) {
-    width: 50%;
+    width: 80%;
   }
 `;
 
