@@ -1,6 +1,6 @@
 .swiper {
   width: 70%;
-  height: 80vh;
+  height: 60vh;
 }
 
 .swiper-slide {
@@ -10,10 +10,6 @@
   height: 300px;
   padding: 0.5rem;
   margin-top: 0.5rem;
-}
-
-.swiper-button-prev {
-  border: 3px solid black;
 }
 
 .swiper-3d .swiper-slide-shadow-left {
@@ -35,4 +31,33 @@
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0)
   );
+}
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
+  right: 10px;
+  padding: 30px;
+  color: #000 !important;
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
+}
+
+@media only screen and (max-width: 1530px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .swiper {
+    width: 80%;
+    height: 50vh;
+    margin-top: 5rem;
+  }
 }

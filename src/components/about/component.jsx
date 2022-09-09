@@ -71,7 +71,6 @@ const StyledLink = styled.a`
 const DetailsContainer = styled.div`
   background: #fff;
   max-width: 920px;
-  height: 480px;
   margin: auto;
   transform: translateY(15%);
   box-shadow: 0px 0px 6px 0px #222 73;
