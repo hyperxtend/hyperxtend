@@ -18,11 +18,12 @@
   margin-top: -70px;
   box-shadow: 0px 0px 6px 0px #222;
 }
+
 .container .details-container .about {
   float: right;
   padding: 20px;
-  margin-top: 50px;
 }
+
 .container .details-container .about .name p {
   margin: 0;
   color: #222;
@@ -70,9 +71,6 @@
   }
   .container .details-container .avatar img {
     width: 300px;
-  }
-  .container .details-container .about {
-    margin-top: 10px;
   }
 }
 

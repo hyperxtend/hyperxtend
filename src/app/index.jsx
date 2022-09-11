@@ -14,6 +14,8 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
+const ContentContainer = styled.div``;
+
 const App = () => {
   const [toggle, toggleNav] = React.useState(false);
 
@@ -25,16 +27,16 @@ const App = () => {
   }
 
   return (
-    <Container>
+    <>
       <NavBar toggle={toggle} toggleNav={toggleNav} />
       {!toggle && (
-        <>
+        <ContentContainer>
           <About />
           <ProjectCarousel />
           <SkillsSection />
-        </>
+        </ContentContainer>
       )}
-    </Container>
+    </>
   );
 };
 

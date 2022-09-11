@@ -1,5 +1,5 @@
 .swiper {
-  width: 70%;
+  width: 60%;
   height: 80vh;
 }
 
@@ -10,6 +10,9 @@
   height: 300px;
   padding: 0.5rem;
   margin-top: 0.5rem;
+}
+.swiper-pagination .swiper-pagination-bullets .swiper-pagination-horizontal {
+  margin-bottom: 15%;
 }
 
 .swiper-3d .swiper-slide-shadow-left {
@@ -37,6 +40,7 @@
   background-color: white;
   background-color: rgba(255, 255, 255, 0);
   right: 10px;
+  top: 250px;
   padding: 30px;
   color: #000 !important;
   fill: #000 !important;

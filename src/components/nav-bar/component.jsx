@@ -9,7 +9,6 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
 `;
 
 const Menu = styled.ul`
@@ -105,8 +104,8 @@ const Line = styled.span`
 `;
 
 const Overlay = styled.div`
-  position: ${({ open }) => (open ? 'inherit' : 'absolute')};
-  height: ${({ open }) => (open ? '91vh' : 0)};
+  position: ${({ open }) => (open ? 'fixed' : 'absolute')};
+  height: ${({ open }) => (open ? '100vh' : 0)};
   width: 100%;
   background: rgb(28, 28, 28, 0.9);
   transition: height 0.4s ease-in-out;
@@ -120,10 +119,11 @@ const OverlayMenu = styled.ul`
   display: ${({ open }) => (open ? 'block' : 'none')};
   list-style: none;
   position: absolute;
+  position: ${({ open }) => (open ? 'absolute' : 'fixed')};
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
-  overflow-x: none;
+  overflow-x: visible;
   li {
     opacity: ${({ open }) => (open ? 1 : 0)};
     font-size: 25px;
@@ -150,11 +150,10 @@ const StyledImageLogo = styled.img`
 
 const NavContainer = styled.div`
   width: 100%;
-  height: 50px;
+  height: 100px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 10;
 `;
 
 const NavMenuItems = () => (
