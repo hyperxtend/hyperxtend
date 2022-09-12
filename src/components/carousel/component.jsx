@@ -24,6 +24,10 @@ const CarouselContainer = styled.div`
   display: flex;
   @media only screen and (max-width: 770px) {
     width: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
