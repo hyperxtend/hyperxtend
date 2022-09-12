@@ -17,7 +17,6 @@ import styled from 'styled-components';
 
 const CarouselContainer = styled.div`
   height: 100%;
-  margin-top: 5rem;
   padding: 2rem;
   display: flex;
 `;

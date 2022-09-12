@@ -1,20 +1,12 @@
 import React from 'react';
 import NavBar from '../components/nav-bar';
 import SkillsSection from '../components/skill-tiles';
-import styled from 'styled-components';
+import PageHeader from '../components/page-header';
 import LandingPage from '../pages/landing-page';
 import About from '../components/about';
 import ProjectCarousel from '../components/carousel';
 
 import './index.css';
-
-const Container = styled.div`
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-`;
-
-const ContentContainer = styled.div``;
 
 const App = () => {
   const [toggle, toggleNav] = React.useState(false);
@@ -30,11 +22,13 @@ const App = () => {
     <>
       <NavBar toggle={toggle} toggleNav={toggleNav} />
       {!toggle && (
-        <ContentContainer>
+        <>
           <About />
+          <PageHeader title="Projects" description="swipe to see my work" />
           <ProjectCarousel />
+          <PageHeader title="Skills" description="tap and discover" />
           <SkillsSection />
-        </ContentContainer>
+        </>
       )}
     </>
   );

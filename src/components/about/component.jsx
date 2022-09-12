@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import './component.css';
 import AlexJoshua from '../../assets/picture-of-me.jpg';
-import CVofAlexJ from '../../external-file/cv-of-alex-j.docx';
+import CVofAlexJ from '../../external-file/cv-of-alex-j-2022.docx';
 import styled from 'styled-components';
 import {
   GITHUB_PROFILE,

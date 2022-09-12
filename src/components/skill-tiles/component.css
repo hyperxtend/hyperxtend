@@ -1,8 +1,8 @@
 .section {
-  z-index: -1;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin-top: 90px;
+  margin-top: 30px;
 }
 
 @media only screen and (max-width: 766px) {
@@ -84,6 +84,7 @@
   -moz-transform-style: preserver-3d;
   transition: transform 1s, background-color 0s 0.3s;
 }
+
 .box-face .box-text {
   line-height: 100px;
   text-align: center;
