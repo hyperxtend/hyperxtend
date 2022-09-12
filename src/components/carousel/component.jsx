@@ -23,7 +23,7 @@ const CarouselContainer = styled.div`
   padding: 0;
   display: flex;
   @media only screen and (max-width: 770px) {
-    width: 43rem;
+    width: 50rem;
   }
 `;
 
