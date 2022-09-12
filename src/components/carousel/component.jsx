@@ -8,6 +8,7 @@ import GuitarProjectImage from '../../assets/project-guitar.PNG';
 import SnakeProjectImage from '../../assets/project-snake.PNG';
 import MazeProjectImage from '../../assets/project-maze.PNG';
 import TwoZeroFourEightProjectImage from '../../assets/project-2048.PNG';
+import TicTacReactProjectImage from '../../assets/project-tic-tac-toe.PNG';
 import ProjectModal from '../project-modal';
 
 import 'swiper/css';
@@ -115,6 +116,16 @@ const ProjectCarousel = () => {
             projectURL="https://hyperxtend.github.io/2048/"
             title="2048"
             body="This responsive web game was made using React JS - its currently an WIP in order to support mobile game play"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ProjectModal
+            projectName="Tic Tac React"
+            projectDescription="tic-tac-toe with bells & whistles"
+            projectImage={TicTacReactProjectImage}
+            projectURL="https://hyperxtend.github.io/TicTacReact"
+            title="Tic Tac React"
+            body="A game or games of Tic Tac Toe with rewind time travel features - built using React & Redux"
           />
         </SwiperSlide>
       </Swiper>
