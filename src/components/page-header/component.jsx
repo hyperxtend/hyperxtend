@@ -8,7 +8,7 @@ const HeaderContainer = styled.div`
   flex-direction: column;
   margin-top: 5rem;
   @media only screen and (max-width: 766px) {
-    margin-top: 15rem;
+    margin-top: 3rem;
   }
 `;
 

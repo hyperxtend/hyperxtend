@@ -81,7 +81,6 @@ const DetailsContainer = styled.div`
   background: #fff;
   max-width: 920px;
   margin: auto;
-  transform: translateY(15%);
   width: 100%;
   height: 100%;
 `;
