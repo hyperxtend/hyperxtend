@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/hyperxtend/static/css/main.f7f24d38.css",
-    "main.js": "/hyperxtend/static/js/main.73ae3ea6.js",
+    "main.css": "/hyperxtend/static/css/main.e631f067.css",
+    "main.js": "/hyperxtend/static/js/main.f448e9d2.js",
     "static/js/787.140cdc41.chunk.js": "/hyperxtend/static/js/787.140cdc41.chunk.js",
     "static/media/project-luma.PNG": "/hyperxtend/static/media/project-luma.321e97ff486d1f2dbb08.PNG",
     "static/media/project-guitar.PNG": "/hyperxtend/static/media/project-guitar.6e95400dddb71a699f37.PNG",
     "static/media/picture-of-me.jpg": "/hyperxtend/static/media/picture-of-me.89e299b9919d75146be2.jpg",
+    "static/media/project-snake.PNG": "/hyperxtend/static/media/project-snake.5f3f24f026e8aa40ece8.PNG",
     "static/media/hyperxtend-header.png": "/hyperxtend/static/media/hyperxtend-header.fa911d1be70bca96a937.png",
+    "static/media/project-2048.PNG": "/hyperxtend/static/media/project-2048.705eaeda662b9fdec585.PNG",
     "static/media/project-whether.PNG": "/hyperxtend/static/media/project-whether.f6246ddc2b64bf074840.PNG",
-    "static/media/cv-of-alex-j.docx": "/hyperxtend/static/media/cv-of-alex-j.00ef4314ca8d68ebe586.docx",
+    "static/media/project-maze.PNG": "/hyperxtend/static/media/project-maze.6846d90eef1e4539f867.PNG",
+    "static/media/cv-of-alex-j-2022.docx": "/hyperxtend/static/media/cv-of-alex-j-2022.00ef4314ca8d68ebe586.docx",
     "static/media/project-dotify.PNG": "/hyperxtend/static/media/project-dotify.0579ae2984d59f354201.PNG",
     "index.html": "/hyperxtend/index.html",
-    "main.f7f24d38.css.map": "/hyperxtend/static/css/main.f7f24d38.css.map",
-    "main.73ae3ea6.js.map": "/hyperxtend/static/js/main.73ae3ea6.js.map",
+    "main.e631f067.css.map": "/hyperxtend/static/css/main.e631f067.css.map",
+    "main.f448e9d2.js.map": "/hyperxtend/static/js/main.f448e9d2.js.map",
     "787.140cdc41.chunk.js.map": "/hyperxtend/static/js/787.140cdc41.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7f24d38.css",
-    "static/js/main.73ae3ea6.js"
+    "static/css/main.e631f067.css",
+    "static/js/main.f448e9d2.js"
   ]
 }
