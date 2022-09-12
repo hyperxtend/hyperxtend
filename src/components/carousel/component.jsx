@@ -20,7 +20,7 @@ import styled from 'styled-components';
 
 const CarouselContainer = styled.div`
   height: 100%;
-  padding: 2rem;
+  padding: 0;
   display: flex;
 `;
 

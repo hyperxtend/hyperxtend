@@ -8,7 +8,7 @@
   background-size: cover;
   width: 300px;
   height: 300px;
-  padding: 0.5rem;
+  padding: 1rem;
   margin-top: 0.5rem;
 }
 .swiper-pagination .swiper-pagination-bullets .swiper-pagination-horizontal {
@@ -60,7 +60,7 @@
 
 @media only screen and (max-width: 770px) {
   .swiper {
-    width: 85%;
-    height: 70vh;
+    width: 60%;
+    height: 90vh;
   }
 }
