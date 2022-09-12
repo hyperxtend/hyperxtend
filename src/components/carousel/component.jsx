@@ -30,7 +30,7 @@ const ProjectCarousel = () => {
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
-        loopedSlides={7}
+        loopedSlides={8}
         spaceBetween={55}
         slidesPerView={'auto'}
         rewind={true}
