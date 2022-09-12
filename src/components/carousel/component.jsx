@@ -54,7 +54,7 @@ const ProjectCarousel = () => {
             projectImage={DotifyProjectImage}
             projectURL="https://dotify-hyperxtend.herokuapp.com/"
             title="dotify"
-            body="A fullstack web application built using React, Express & Node JS with Spotify's Web API"
+            body="A fullstack music player web application built using React, Express & Node JS with Spotify's Web API"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -64,7 +64,7 @@ const ProjectCarousel = () => {
             projectImage={WhetherProjectImage}
             projectURL="https://hyperxtend.github.io/wheather-app/"
             title="Whether the Weather"
-            body="A responsive React web application using OpenWeather API"
+            body="A fully responsive React weather application using OpenWeather API"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -102,7 +102,7 @@ const ProjectCarousel = () => {
             projectName="Space Maze"
             projectDescription="help find the way"
             projectImage={MazeProjectImage}
-            projectURL="https://hyperxtend.github.io/guitarSimulator/"
+            projectURL="https://hyperxtend.github.io/MazeJS/"
             title="Space Maze"
             body=" A problem solving game with stats and multiple difficulties to help challenge you. Created using HTML, CSS & JavaScript"
           />
