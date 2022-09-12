@@ -12,11 +12,7 @@ const Project = ({
   <div className="project">
     <h3 className="project-header">{projectName}</h3>
     <p className="project-body">{projectDescription}</p>
-    <img
-      alt="project"
-      className="project-image d-block w-80 "
-      src={projectImage}
-    />
+    <img alt="project" className="project-image " src={projectImage} />
     <div className="modal-button-container">
       <a target="_blank" rel="noopener noreferrer" href={projectURL}>
         <Button className="demo-button" variant="outline-dark">
