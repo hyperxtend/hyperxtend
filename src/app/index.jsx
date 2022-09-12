@@ -7,6 +7,7 @@ import About from '../components/about';
 import ProjectCarousel from '../components/carousel';
 
 import './index.css';
+import ContactFooter from '../components/contact-footer/component';
 
 const App = () => {
   const [toggle, toggleNav] = React.useState(false);
@@ -30,6 +31,7 @@ const App = () => {
           <SkillsSection />
         </>
       )}
+      <ContactFooter />
     </>
   );
 };

@@ -11,7 +11,6 @@ import { BsStarHalf } from 'react-icons/bs';
 import { SiTypescript } from 'react-icons/si';
 import './component.css';
 import { GITHUB_PROFILE } from '../../global';
-import ContactFooter from '../contact-footer';
 
 const SkillsSection = () => {
   return (

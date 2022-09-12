@@ -207,15 +207,16 @@ const About = () => {
             <h1>I'm Alex Joshua</h1>
           </div>
           <div className="about-content">
+            <p>An experienced Software Developer & Designer</p>
             <p>
-              A Software Developer & Designer with creative & tenacious drive
-              for success.
-              <br /> I'm not afraid of a challenge as my approach is simple &
-              results driven.
+              I consider myself an tenacious, innovative & systematic individual
+              with proficient problem-solving skills.
               <br />
-              I've always been intrigued by the design & mechanics especially
-              when they add value, simplicity & sustainability within a project
-              & team.
+              Bringing value, creativity & quality to any team or project.
+            </p>
+            <p>
+              I'm not afraid of a challenge - my approach is simple & results
+              driven
             </p>
             <ButtonContainer className="about-me-button-container">
               <StyledButton variant="outline-dark">

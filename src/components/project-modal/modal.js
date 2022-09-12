@@ -8,10 +8,21 @@ const OverviewModal = ({ title, body }) => {
 
   return (
     <>
-      <Button className="modal-button" variant="dark" onClick={handleShow}>
+      <Button
+        className="modal-button"
+        variant="dark"
+        onClick={handleShow}
+        animation
+      >
         About
       </Button>
-      <Modal className="modal-overview" show={show} onHide={handleClose}>
+      <Modal
+        className="modal-overview"
+        show={show}
+        onHide={handleClose}
+        centered
+        animation
+      >
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
