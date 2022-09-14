@@ -8,6 +8,9 @@ import ProjectCarousel from '../components/carousel';
 
 import './index.css';
 import ContactFooter from '../components/contact-footer/component';
+import { BrowserRouter } from 'react-router-dom';
+import { BASE_URL } from '../routes/urls';
+import NavigationRoutes from '../routes';
 
 const App = () => {
   const [toggle, toggleNav] = React.useState(false);
@@ -20,19 +23,11 @@ const App = () => {
   }
 
   return (
-    <>
+    <BrowserRouter basename={BASE_URL}>
       <NavBar toggle={toggle} toggleNav={toggleNav} />
-      {!toggle && (
-        <>
-          <About />
-          <PageHeader title="Projects" description="swipe to see my work" />
-          <ProjectCarousel />
-          <PageHeader title="Skills" description="tap and discover" />
-          <SkillsSection />
-        </>
-      )}
+      <NavigationRoutes toggle={toggle} />
       {!toggle && <ContactFooter />}
-    </>
+    </BrowserRouter>
   );
 };
 

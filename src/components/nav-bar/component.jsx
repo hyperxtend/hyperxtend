@@ -1,7 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import AlexLogo from '../../assets/hyperxtend-header.png';
-
+import { NavLink } from 'react-router-dom';
+import {
+  BASE_URL,
+  PORTFOLIO,
+  ABOUT,
+  SKILL,
+  BLOG,
+  LANDING_PAGE,
+} from '../../routes/urls';
 const Nav = styled.nav`
   padding: 0 20px;
   min-height: 9vh;
@@ -68,7 +76,7 @@ const Item = styled.span`
   }
 `;
 
-const Link = styled.a`
+const Link = styled(NavLink)`
   color: white;
   text-decoration: none;
 
@@ -159,16 +167,16 @@ const NavContainer = styled.div`
 const NavMenuItems = () => (
   <>
     <Item>
-      <Link>About</Link>
+      <Link to={ABOUT}>About</Link>
     </Item>
     <Item>
-      <Link>Portfolio</Link>
+      <Link to={PORTFOLIO}>Portfolio</Link>
     </Item>
     <Item>
-      <Link>Skills</Link>
+      <Link to={SKILL}>Skill</Link>
     </Item>
     <Item>
-      <Link>Contact</Link>
+      <Link to={BLOG}>Blog</Link>
     </Item>
   </>
 );
@@ -177,7 +185,9 @@ const Header = ({ toggle, toggleNav }) => {
   return (
     <NavContainer>
       <Nav>
-        <StyledImageLogo src={AlexLogo} alt="hyperxtend-logo" />
+        <Link to={LANDING_PAGE}>
+          <StyledImageLogo src={AlexLogo} alt="hyperxtend-logo" />
+        </Link>
         <Menu>
           <NavMenuItems />
         </Menu>
