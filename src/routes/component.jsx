@@ -1,22 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import OverviewPage from '../pages/overview-page';
-import {
-  ABOUT,
-  BASE_URL,
-  BLOG,
-  CONTACT,
-  LANDING_PAGE,
-  PORTFOLIO,
-} from './urls';
-
-const Home = () => {
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  );
-};
+import { ABOUT, BLOG, CONTACT, LANDING_PAGE, PORTFOLIO, SKILL } from './urls';
 
 const About = () => {
   return (
@@ -25,6 +10,7 @@ const About = () => {
     </div>
   );
 };
+
 const Blog = () => {
   return (
     <div>
@@ -32,6 +18,23 @@ const Blog = () => {
     </div>
   );
 };
+
+const Portfolio = () => {
+  return (
+    <div>
+      <h1>Portfolio</h1>
+    </div>
+  );
+};
+
+const Skill = () => {
+  return (
+    <div>
+      <h1>Skill</h1>
+    </div>
+  );
+};
+
 const Contact = () => {
   return (
     <div>
@@ -45,14 +48,36 @@ const NavigationRoutes = ({ toggle }) => {
   return (
     <Routes>
       <Route
+        strict
         exact
         path={LANDING_PAGE}
         element={menuClosed ? <OverviewPage /> : null}
       />
-      <Route path={ABOUT} element={menuClosed ? <About /> : null} />
-      <Route path={BLOG} element={menuClosed ? <Blog /> : null} />
-      <Route path={CONTACT} element={menuClosed ? <Contact /> : null} />
-      <Route path={PORTFOLIO} element={menuClosed ? <Contact /> : null} />
+      <Route
+        strict
+        exact
+        path={ABOUT}
+        element={menuClosed ? <About /> : null}
+      />
+      <Route strict exact path={BLOG} element={menuClosed ? <Blog /> : null} />
+      <Route
+        strict
+        exact
+        path={SKILL}
+        element={menuClosed ? <Skill /> : null}
+      />
+      <Route
+        strict
+        exact
+        path={CONTACT}
+        element={menuClosed ? <Contact /> : null}
+      />
+      <Route
+        strict
+        exact
+        path={PORTFOLIO}
+        element={menuClosed ? <Portfolio /> : null}
+      />
     </Routes>
   );
 };

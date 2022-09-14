@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import AlexLogo from '../../assets/hyperxtend-header.png';
 import { NavLink } from 'react-router-dom';
 import {
-  BASE_URL,
   PORTFOLIO,
   ABOUT,
   SKILL,
   BLOG,
   LANDING_PAGE,
+  CONTACT,
 } from '../../routes/urls';
 const Nav = styled.nav`
   padding: 0 20px;
@@ -67,6 +67,11 @@ const Item = styled.span`
       #9ec1cf,
       #cc99c9
     );
+  }
+
+  .active {
+    border-bottom: 3px solid rgba(246, 247, 247, 0.95);
+    border-radius: 4px;
   }
 
   &:hover:after {
@@ -164,19 +169,32 @@ const NavContainer = styled.div`
   top: 0;
 `;
 
-const NavMenuItems = () => (
+const NavMenuItems = ({ closeNav }) => (
   <>
     <Item>
-      <Link to={ABOUT}>About</Link>
+      <Link onClick={closeNav} to={ABOUT}>
+        About
+      </Link>
     </Item>
     <Item>
-      <Link to={PORTFOLIO}>Portfolio</Link>
+      <Link onClick={closeNav} to={PORTFOLIO}>
+        Portfolio
+      </Link>
     </Item>
     <Item>
-      <Link to={SKILL}>Skill</Link>
+      <Link onClick={closeNav} to={SKILL}>
+        Skill
+      </Link>
     </Item>
     <Item>
-      <Link to={BLOG}>Blog</Link>
+      <Link onClick={closeNav} to={BLOG}>
+        Blog
+      </Link>
+    </Item>
+    <Item>
+      <Link onClick={closeNav} to={CONTACT}>
+        Contact
+      </Link>
     </Item>
   </>
 );
@@ -199,7 +217,7 @@ const Header = ({ toggle, toggleNav }) => {
       </Nav>
       <Overlay open={toggle}>
         <OverlayMenu open={toggle}>
-          <NavMenuItems />
+          <NavMenuItems closeNav={() => toggleNav(!toggle)} />
         </OverlayMenu>
       </Overlay>
     </NavContainer>

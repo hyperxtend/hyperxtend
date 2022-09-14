@@ -1,10 +1,6 @@
 import React from 'react';
 import NavBar from '../components/nav-bar';
-import SkillsSection from '../components/skill-tiles';
-import PageHeader from '../components/page-header';
 import LandingPage from '../pages/landing-page';
-import About from '../components/about';
-import ProjectCarousel from '../components/carousel';
 
 import './index.css';
 import ContactFooter from '../components/contact-footer/component';
@@ -13,7 +9,7 @@ import { BASE_URL } from '../routes/urls';
 import NavigationRoutes from '../routes';
 
 const App = () => {
-  const [toggle, toggleNav] = React.useState(false);
+  const [toggle, setNavToggle] = React.useState(false);
 
   const [isLanding, setIsLanding] = React.useState(true);
 
@@ -24,8 +20,8 @@ const App = () => {
 
   return (
     <BrowserRouter basename={BASE_URL}>
-      <NavBar toggle={toggle} toggleNav={toggleNav} />
-      <NavigationRoutes toggle={toggle} />
+      <NavBar toggle={toggle} toggleNav={setNavToggle} />
+      <NavigationRoutes toggle={toggle} setNavToggle={setNavToggle} />
       {!toggle && <ContactFooter />}
     </BrowserRouter>
   );
