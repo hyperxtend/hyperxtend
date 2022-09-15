@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hyperxtend/static/css/main.7e8bbc59.css",
-    "main.js": "/hyperxtend/static/js/main.f3e1425f.js",
+    "main.css": "/hyperxtend/static/css/main.eb09af2a.css",
+    "main.js": "/hyperxtend/static/js/main.2d383495.js",
     "static/js/787.140cdc41.chunk.js": "/hyperxtend/static/js/787.140cdc41.chunk.js",
     "static/media/project-luma.PNG": "/hyperxtend/static/media/project-luma.321e97ff486d1f2dbb08.PNG",
     "static/media/project-guitar.PNG": "/hyperxtend/static/media/project-guitar.6e95400dddb71a699f37.PNG",
@@ -15,12 +15,12 @@
     "static/media/cv-of-alex-j-2022.docx": "/hyperxtend/static/media/cv-of-alex-j-2022.00ef4314ca8d68ebe586.docx",
     "static/media/project-dotify.PNG": "/hyperxtend/static/media/project-dotify.0579ae2984d59f354201.PNG",
     "index.html": "/hyperxtend/index.html",
-    "main.7e8bbc59.css.map": "/hyperxtend/static/css/main.7e8bbc59.css.map",
-    "main.f3e1425f.js.map": "/hyperxtend/static/js/main.f3e1425f.js.map",
+    "main.eb09af2a.css.map": "/hyperxtend/static/css/main.eb09af2a.css.map",
+    "main.2d383495.js.map": "/hyperxtend/static/js/main.2d383495.js.map",
     "787.140cdc41.chunk.js.map": "/hyperxtend/static/js/787.140cdc41.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e8bbc59.css",
-    "static/js/main.f3e1425f.js"
+    "static/css/main.eb09af2a.css",
+    "static/js/main.2d383495.js"
   ]
 }
