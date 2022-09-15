@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import OverviewPage from '../pages/overview-page';
+import ComingSoonPage from '../pages/coming-soon-page';
 import { ABOUT, BLOG, CONTACT, LANDING_PAGE, PORTFOLIO, SKILL } from './urls';
 
 const About = () => {
@@ -59,7 +60,12 @@ const NavigationRoutes = ({ toggle }) => {
         path={ABOUT}
         element={menuClosed ? <About /> : null}
       />
-      <Route strict exact path={BLOG} element={menuClosed ? <Blog /> : null} />
+      <Route
+        strict
+        exact
+        path={BLOG}
+        element={menuClosed ? <ComingSoonPage /> : null}
+      />
       <Route
         strict
         exact
