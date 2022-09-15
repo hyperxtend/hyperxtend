@@ -11,6 +11,8 @@ import {
   TUMBLR_PROFILE,
   INSTAGRAM_PROFILE,
 } from '../../global';
+import { ABOUT } from '../../routes/urls';
+import { Link as RouteLink } from 'react-router-dom';
 
 const StyledImage = styled.img`
   filter: grayscale(100%) brightness(65%);
@@ -223,7 +225,9 @@ const About = () => {
                   Download CV
                 </a>
               </StyledButton>
-              <StyledButton variant="dark">More about me</StyledButton>
+              <RouteLink to={{ pathname: `/${ABOUT}` }}>
+                <StyledButton variant="dark">More about me</StyledButton>
+              </RouteLink>
             </ButtonContainer>
           </div>
         </div>

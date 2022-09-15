@@ -2,14 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import AlexLogo from '../../assets/hyperxtend-header.png';
 import { NavLink } from 'react-router-dom';
-import {
-  PORTFOLIO,
-  ABOUT,
-  SKILL,
-  BLOG,
-  LANDING_PAGE,
-  CONTACT,
-} from '../../routes/urls';
+import { PORTFOLIO, ABOUT, SKILL, BLOG, LANDING_PAGE } from '../../routes/urls';
 const Nav = styled.nav`
   padding: 0 20px;
   min-height: 9vh;
@@ -36,10 +29,9 @@ const Item = styled.span`
   display: inline-block;
   position: relative;
   margin: 1rem 2rem;
-  font-size: 25px;
+  font-size: 20px;
   color: #696f7a;
   transition: color 0.8s cubic-bezier(0.83, 0.01, 0.29, 1);
-
   animation: float infinite ease-in;
 
   &:hover {
@@ -70,8 +62,19 @@ const Item = styled.span`
   }
 
   .active {
-    border-bottom: 3px solid rgba(246, 247, 247, 0.95);
-    border-radius: 4px;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(
+      90deg,
+      #ff6663,
+      #feb144,
+      #fdfd97,
+      #9ee093,
+      #9ec1cf,
+      #cc99c9
+    );
+    border-image-slice: 1;
+    width: 100%;
   }
 
   &:hover:after {
@@ -84,7 +87,6 @@ const Item = styled.span`
 const Link = styled(NavLink)`
   color: white;
   text-decoration: none;
-
   :hover {
     color: #fff;
     text-decoration: none;
@@ -172,6 +174,11 @@ const NavContainer = styled.div`
 const NavMenuItems = ({ closeNav }) => (
   <>
     <Item>
+      <Link onClick={closeNav} to={LANDING_PAGE}>
+        Overview
+      </Link>
+    </Item>
+    <Item>
       <Link onClick={closeNav} to={ABOUT}>
         About
       </Link>
@@ -189,11 +196,6 @@ const NavMenuItems = ({ closeNav }) => (
     <Item>
       <Link onClick={closeNav} to={BLOG}>
         Blog
-      </Link>
-    </Item>
-    <Item>
-      <Link onClick={closeNav} to={CONTACT}>
-        Contact
       </Link>
     </Item>
   </>

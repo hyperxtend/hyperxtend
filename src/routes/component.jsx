@@ -78,6 +78,7 @@ const NavigationRoutes = ({ toggle }) => {
         path={PORTFOLIO}
         element={menuClosed ? <Portfolio /> : null}
       />
+      <Route path="*" element={menuClosed ? <OverviewPage /> : null} />
     </Routes>
   );
 };
