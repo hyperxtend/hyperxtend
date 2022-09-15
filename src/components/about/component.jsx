@@ -12,7 +12,7 @@ import {
   INSTAGRAM_PROFILE,
 } from '../../global';
 import { ABOUT } from '../../routes/urls';
-import { Link as RouteLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const StyledImage = styled.img`
   filter: grayscale(100%) brightness(65%);
@@ -136,6 +136,7 @@ const GetInTouchText = styled.h5`
 `;
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <DetailsContainer className="container">
       <div className="details-container">
@@ -225,9 +226,12 @@ const About = () => {
                   Download CV
                 </a>
               </StyledButton>
-              <RouteLink to={{ pathname: `/${ABOUT}` }}>
-                <StyledButton variant="dark">More about me</StyledButton>
-              </RouteLink>
+              <StyledButton
+                onClick={() => navigate(`/${ABOUT}`)}
+                variant="dark"
+              >
+                More about me
+              </StyledButton>
             </ButtonContainer>
           </div>
         </div>
