@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import AlexLogo from '../../assets/hyperxtend-header.png';
 import { NavLink } from 'react-router-dom';
-import { PORTFOLIO, ABOUT, SKILL, BLOG, LANDING_PAGE } from '../../routes/urls';
+import { PORTFOLIO, ABOUT, WORK, BLOG, LANDING_PAGE } from '../../routes/urls';
 const Nav = styled.nav`
   padding: 0 20px;
   min-height: 9vh;
@@ -189,8 +189,8 @@ const NavMenuItems = ({ closeNav }) => (
       </Link>
     </Item>
     <Item>
-      <Link onClick={closeNav} to={SKILL}>
-        Skill
+      <Link onClick={closeNav} to={WORK}>
+        Work
       </Link>
     </Item>
     <Item>

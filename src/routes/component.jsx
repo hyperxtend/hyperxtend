@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import OverviewPage from '../pages/overview-page';
 import ComingSoonPage from '../pages/coming-soon-page';
-import { ABOUT, BLOG, CONTACT, LANDING_PAGE, PORTFOLIO, SKILL } from './urls';
+import { ABOUT, BLOG, WORK, LANDING_PAGE, PORTFOLIO } from './urls';
 
 const About = () => {
   return (
@@ -12,10 +12,10 @@ const About = () => {
   );
 };
 
-const Blog = () => {
+const Work = () => {
   return (
     <div>
-      <h1>Blog</h1>
+      <h1>Work</h1>
     </div>
   );
 };
@@ -24,22 +24,6 @@ const Portfolio = () => {
   return (
     <div>
       <h1>Portfolio</h1>
-    </div>
-  );
-};
-
-const Skill = () => {
-  return (
-    <div>
-      <h1>Skill</h1>
-    </div>
-  );
-};
-
-const Contact = () => {
-  return (
-    <div>
-      <h1>Contact Us</h1>
     </div>
   );
 };
@@ -66,18 +50,8 @@ const NavigationRoutes = ({ toggle }) => {
         path={BLOG}
         element={menuClosed ? <ComingSoonPage /> : null}
       />
-      <Route
-        strict
-        exact
-        path={SKILL}
-        element={menuClosed ? <Skill /> : null}
-      />
-      <Route
-        strict
-        exact
-        path={CONTACT}
-        element={menuClosed ? <Contact /> : null}
-      />
+      <Route strict exact path={WORK} element={menuClosed ? <Work /> : null} />
+
       <Route
         strict
         exact
