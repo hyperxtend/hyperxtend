@@ -3,19 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import OverviewPage from '../pages/overview-page';
 import ComingSoonPage from '../pages/coming-soon-page';
 import { ABOUT, BLOG, WORK, LANDING_PAGE, PORTFOLIO } from './urls';
+import WorkPage from '../pages/work-page';
 
 const About = () => {
   return (
     <div>
       <h1>About</h1>
-    </div>
-  );
-};
-
-const Work = () => {
-  return (
-    <div>
-      <h1>Work</h1>
     </div>
   );
 };
@@ -50,7 +43,12 @@ const NavigationRoutes = ({ toggle }) => {
         path={BLOG}
         element={menuClosed ? <ComingSoonPage /> : null}
       />
-      <Route strict exact path={WORK} element={menuClosed ? <Work /> : null} />
+      <Route
+        strict
+        exact
+        path={WORK}
+        element={menuClosed ? <WorkPage /> : null}
+      />
 
       <Route
         strict
