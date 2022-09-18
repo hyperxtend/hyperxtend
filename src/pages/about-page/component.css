@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@keyframes fade-in-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.padding {
+  padding: 4%;
+}
+.intro-paragraph {
+  animation: slide-in-left 3s;
+}
+.intro-image {
+  animation: slide-in-right 2s;
+}
+.profile-header {
+  animation: fade-in-reveal 4s;
+}
+
+/** Layout **/
+.intro-details {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+}
+.intro-details > .intro-image {
+  width: 24%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.intro-details > .intro-paragraph {
+  width: 76%;
+}
+
+.about-page-info {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+}
+.about-page-info > .profile {
+  -webkit-flex: 1 0 0;
+  flex: 1 0 0;
+}
+.about-page-info > .skills {
+  -webkit-flex: 1 0 0;
+  flex: 1 0 0;
+}
+
+.about-page-buttons {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 auto;
+}
+.about-page-buttons div {
+  width: 100%;
+}
+
+/** Elements **/
+.intro-image > .image {
+  max-width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+.intro-image > .image > .image-circle {
+  width: 100%;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 5px solid #252439;
+  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+
+.about-page-button {
+  min-width: 70%;
+  height: 100%;
+  padding: 20px;
+  font-family: 'poppins-bold', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+}
+.hire-me > .about-page-button {
+  margin-right: 25px;
+  float: right;
+  color: #252439;
+  background-color: transparent;
+  border: 3px solid #252439;
+}
+
+/** Styles **/
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page h4 {
+  color: #252439;
+  font-family: 'poppins-semibold', sans-serif;
+}
+.about-page h1,
+.about-page h4 {
+  font-family: serif;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.about-page h1 {
+  margin-top: 0px;
+}
+.about-page h4 {
+  letter-spacing: 0.25rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.about-page h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  font-size: 19px;
+}
+.about-page h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.115rem;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: underline;
+  line-height: 0;
+  padding-top: 1rem;
+}
+
+.about-page-page p {
+  color: #888888;
+  font-family: 'lora-regular', serif;
+  line-height: 1.5;
+}
+.intro-paragraph p {
+  line-height: 1.8 !important;
+  font-size: 20px;
+}
+
+/** Media Queries **/
+@media all and (max-width: 800px) {
+  .about-page-info {
+    flex-direction: column;
+  }
+  .about-page-info h2 {
+    text-align: center;
+  }
+  .about-page-buttons {
+    flex-direction: column;
+  }
+  .about-page-button {
+    width: 100%;
+  }
+  .hire-me > .about-page-button {
+    float: none;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  .download-cv > .about-page-button {
+    margin-left: 0px;
+    float: none;
+  }
+  .intro-image > .image {
+    max-width: 95%;
+  }
+  .intro-paragraph p {
+    line-height: 1.5 !important;
+    font-size: 18px;
+  }
+  .about-page h1 {
+    font-size: 22px;
+  }
+  .about-page h2,
+  .about-page h3,
+  .about-page h4 {
+    font-size: 15px;
+  }
+}
+@media all and (max-width: 500px) {
+  .intro-details > .intro-image {
+    width: 100%;
+  }
+  .intro-details > .intro-paragraph {
+    width: 100%;
+    text-align: center;
+  }
+  .intro-image > .image {
+    width: 40%;
+  }
+}

@@ -2,16 +2,9 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import OverviewPage from '../pages/overview-page';
 import ComingSoonPage from '../pages/coming-soon-page';
+import AboutPage from '../pages/about-page';
 import { ABOUT, BLOG, WORK, LANDING_PAGE, PORTFOLIO } from './urls';
 import WorkPage from '../pages/work-page';
-
-const About = () => {
-  return (
-    <div>
-      <h1>About</h1>
-    </div>
-  );
-};
 
 const Portfolio = () => {
   return (
@@ -35,7 +28,7 @@ const NavigationRoutes = ({ toggle }) => {
         strict
         exact
         path={ABOUT}
-        element={menuClosed ? <About /> : null}
+        element={menuClosed ? <AboutPage /> : null}
       />
       <Route
         strict

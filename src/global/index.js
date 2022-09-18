@@ -88,3 +88,33 @@ export const events = [
       'I started at GK as in intern which was an 8 month process of me upskilling myself - becoming more proficient with the tech stacks I utilise, working with business requirements & collaboration with a team. At this time I started on the Bidvest project, in which I became the Junior developer for the project. As time went on I continued working on my craft becoming an Intermediate & was given a platform to manager. As an Intermediate Engineer my role is to bring features to development, take features to production, fix bugs, project architecture, contribute to company standards, 3rd party integration and list goes on in my resume',
   },
 ];
+
+export const aboutAlex = [
+  { question: 'Fullname:', answer: 'Alex Joshua' },
+  { question: 'Age:', answer: '23 but going 30' },
+  {
+    question: 'Occupation:',
+    answer: 'I pretty much use the internet to build the internet',
+  },
+  {
+    question: 'Location:',
+    answer: 'Besides the constant state of anxiety I live in Cape Town',
+  },
+  {
+    question: ' Drivers License:',
+    answer: 'Yes, but I would not test that one',
+  },
+  {
+    question: 'Advice:',
+    answer: 'Learn from the mistakes of other who listen to you',
+  },
+  {
+    question: 'Hobbies:',
+    answer:
+      'I enjoy hiking, nature, traveling, art, music and all the other, Instagramy stuff',
+  },
+
+  { question: 'Favorite color:', answer: 'really ?' },
+  { question: 'Favorite food:', answer: 'Pizza - duh' },
+  { question: 'Long term goal:', answer: 'Survive apocalypse' },
+];

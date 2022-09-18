@@ -184,11 +184,6 @@ const NavMenuItems = ({ closeNav }) => (
       </Link>
     </Item>
     <Item>
-      <Link onClick={closeNav} to={PORTFOLIO}>
-        Portfolio
-      </Link>
-    </Item>
-    <Item>
       <Link onClick={closeNav} to={WORK}>
         Work
       </Link>
