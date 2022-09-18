@@ -9,79 +9,82 @@ export const BEHANCE_PROFILE = 'https://www.behance.net/alexjoshua1';
 export const events = [
   {
     date: {
-      from: 1895,
-      to: 1905,
+      from: 'Mar 2015',
+      to: 'Nov 2016',
     },
-    role: 'Early Discoveries',
-    company: 'Theory of radioactive decay',
-    location: 'Ernest Rutherford',
+    role: 'Office Administration',
+    location: 'African Secret',
     content:
-      'Proin nunc nulla, blandit sit amet egestas sed, tincidunt non est. Ut id sem justo. Curabitur quis dictum turpis, ut tempus ligula. Fusce tempus scelerisque lorem in posuere.',
+      'During High School I worked as an Office administrator for a food company. My responsibilities were organizing meetings, stock take, creating production roadmaps & reports',
   },
   {
     date: {
-      from: 1996,
-      to: 1999,
+      from: 'Dec 2016',
+      to: 'Nov 2017',
     },
-    role: 'Futher Investigations',
-    company: 'First model of an atom',
-    location: 'Niels Bohr',
+    role: 'Fashion Design Student',
+    location: 'Design Academy of Fashion (DAF)',
     content:
-      'Quisque tortor tortor, pretium sed risus sit amet, pretium rutrum nunc. Nulla turpis eros, rhoncus at lobortis eget, elementum eu lectus.',
+      'My initial career path was Fashion Design, which i pursued after graduating High School. During my time at DAF I learned pattern making, sewing, garment construction & technical designing. But by the end of the 1st semester I had decided to change career paths & find my niche',
   },
   {
     date: {
-      from: 1997,
-      to: 1999,
+      from: 'Dec 2017',
+      to: 'Feb 2019',
     },
-    role: 'Prelude to War',
-    company: 'Splitting of the nucleus',
-    location: 'Albert Einstein',
+    role: 'Brand Ambassador',
+    location: 'Perfect Solutions',
     content:
-      'Cras ut orci hendrerit, elementum massa vitae, eleifend sapien. Praesent dignissim sem est, id ornare sem lobortis at.',
+      'After changing career paths I decided to work for an events company, where I done promotions, merchandise sales, stock take, waitering, bartending & social media marketing - and so much more. Being a Brand Ambassador you had to learn to act & think on your feet by fulfilling a role where you were needed',
   },
   {
     date: {
-      from: 1999,
-      to: 2001,
+      from: 'Mar 2019',
+      to: 'Nov 2019',
     },
-    role: 'Organizing the Effort',
-    company: 'Nuclear Chain Reaction',
-    location: 'Enrico Fermi',
+    role: 'Coding Student',
+    location: 'Life Choices / HyperionDev',
     content:
-      'Rhoncus at lobortis eget, elementum eu lectus. Maecenas et ante sapien. Ut semper commodo felis, eget ullamcorper dolor faucibus vel. Fusce pharetra tempor est malesuada rutrum.',
+      'It was at Life Choices where I 1st started coding. We had be taken through different course materials which focused on programming, software development & utilising different technologies in order to start a career in IT. I learned various programming languages, built sites & applications & problem solve real life scenarios using software & technology',
   },
   {
     date: {
-      from: 2002,
-      to: 2005,
+      from: 'Nov 2019',
+      to: 'Jan 2020',
     },
-    role: 'The Manhattan Project',
-    company: 'Jornada del Muerto',
-    location: 'J. Robert Oppenheimer',
+    role: 'Freelancing',
+    location: 'Cape Town',
     content:
-      'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce velit enim, dignissim eu fringilla quis, malesuada et massa.',
+      'Straight after getting certified with Life Choices I was looking for work, but I had kept do side jobs like small sites for businesses, designed flyers for events & even went back as a Brand Ambassador a few times just to keep busy',
   },
   {
     date: {
-      from: 2005,
-      to: 2010,
+      from: 'Nov 2019',
+      to: 'Jan 2020',
     },
-    role: 'Crossroads of Peace',
-    company: 'Atomic Energy Act',
-    location: 'Harry S. Truman',
+    role: 'Freelancing',
+    location: 'Cape Town',
     content:
-      'Fusce et sem accumsan magna fringilla porta. Nunc eget turpis ut ligula vulputate faucibus. Nam euismod leo vel eleifend suscipit. Pellentesque et congue felis.',
+      'Straight after getting certified with Life Choices I was looking for work, but I had kept do side jobs like small sites for businesses, designed flyers for events & even went back as a Brand Ambassador a few times just to keep busy',
   },
   {
     date: {
-      from: 2010,
-      to: 2014,
+      from: 'Feb 2020',
+      to: 'Mar 2020',
     },
-    role: 'Current Day',
-    company: 'Arms Races',
-    location: 'Present Day',
+    role: 'Software Developer - Intern',
+    location: 'Skywalker Innovations',
     content:
-      'Aliquam leo arcu, semper vel iaculis sed, maximus eu neque. Maecenas mollis est non ante vehicula commodo. Nullam feugiat tellus augue. ',
+      'I was interning at Skywalker Innovations for 2 months busy building a fullstack application to gauge my skill set. I received an offer for an internship at Global Kinetic which had more opportunity for me - Skywalker told me to go for it',
+  },
+  {
+    date: {
+      from: 'March 2020',
+      to: 'Current Day',
+    },
+    role: 'Software Engineer',
+    location: 'Global Kinetic',
+    content:
+      'I started at GK as in intern which was an 8 month process of me upskilling myself - becoming more proficient with the tech stacks I utilise, working with business requirements & collaboration with a team. At this time I started on the Bidvest project, in which I became the Junior developer for the project. As time went on I continued working on my craft becoming an Intermediate & was given a platform to manager. As an Intermediate Engineer my role is to bring features to development, take features to production, fix bugs, project architecture, contribute to company standards, 3rd party integration and list goes on in my resume',
   },
 ];

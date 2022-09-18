@@ -29,6 +29,7 @@ const useScrollPosition = (effect, deps, element, useWindow, wait) => {
     const handleScroll = () => {
       if (wait) {
         if (throttleTimeout === null) {
+          // eslint-disable-next-line react-hooks/exhaustive-deps
           throttleTimeout = setTimeout(callBack, wait);
         }
       } else {
@@ -75,7 +76,7 @@ const EventItem = (props) => {
         <time>
           {date.from} - {date.to}
         </time>
-        <h4 className="title">{role}</h4>
+        <h4 className="job-title">{role}</h4>
         <h3 className="company">{company}</h3>
         <p>
           <i>{location}</i>

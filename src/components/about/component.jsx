@@ -80,7 +80,9 @@ const StyledLink = styled.a`
   }
 `;
 const DetailsContainer = styled.div`
+  color: #000;
   background: #fff;
+  text-align: left;
   max-width: 920px;
   margin: auto;
   width: 100%;
