@@ -1,7 +1,4 @@
 import React from 'react';
-import './component.css';
-import PageHeader from '../../components/page-header';
-import { events } from '../../global';
 
 const isBrowser = typeof window !== `undefined`;
 
@@ -32,7 +29,6 @@ const useScrollPosition = (effect, deps, element, useWindow, wait) => {
     const handleScroll = () => {
       if (wait) {
         if (throttleTimeout === null) {
-          // eslint-disable-next-line react-hooks/exhaustive-deps
           throttleTimeout = setTimeout(callBack, wait);
         }
       } else {
@@ -50,7 +46,6 @@ const useScrollPosition = (effect, deps, element, useWindow, wait) => {
   }, deps);
 };
 
-// Event Item
 const EventItem = (props) => {
   const timeItem = React.useRef();
   const [isVisible, setIsVisible] = React.useState(false);
@@ -80,7 +75,7 @@ const EventItem = (props) => {
         <time>
           {date.from} - {date.to}
         </time>
-        <h4 className="job-title">{role}</h4>
+        <h4 className="title">{role}</h4>
         <h3 className="company">{company}</h3>
         <p>
           <i>{location}</i>
@@ -91,44 +86,4 @@ const EventItem = (props) => {
   );
 };
 
-const Timeline = (props) => {
-  const scrollArea = React.useRef();
-
-  const makeTimeline = (events) => {
-    const evlist = props.events.map((item) => {
-      return (
-        <EventItem
-          date={item.date}
-          content={item.content}
-          role={item.role}
-          company={item.company}
-          location={item.location}
-          key={`${item.time}`}
-        />
-      );
-    });
-    return <ul>{evlist}</ul>;
-  };
-  return (
-    <div className="wrapper" ref={scrollArea}>
-      <section className="header">
-        <div className="container">
-          <PageHeader
-            title="Work Experiences"
-            description="timeline of my career"
-          />
-        </div>
-      </section>
-
-      <section className="timeline">
-        <ul>{makeTimeline(events)}</ul>
-      </section>
-    </div>
-  );
-};
-
-const WorkPage = () => {
-  return <Timeline events={events} />;
-};
-
-export default WorkPage;
+export default EventItem;

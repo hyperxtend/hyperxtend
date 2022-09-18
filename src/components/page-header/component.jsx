@@ -25,6 +25,7 @@ const HeaderTitle = styled.h3`
 const HeaderDescription = styled.p`
   letter-spacing: 2px;
   text-align: center;
+  color: black;
   font-weight: 500;
 `;
 
