@@ -59,16 +59,6 @@ export const events = [
   },
   {
     date: {
-      from: 'Nov 2019',
-      to: 'Jan 2020',
-    },
-    role: 'Freelancing',
-    location: 'Cape Town',
-    content:
-      'Straight after getting certified with Life Choices I was looking for work, but I had kept do side jobs like small sites for businesses, designed flyers for events & even went back as a Brand Ambassador a few times just to keep busy',
-  },
-  {
-    date: {
       from: 'Feb 2020',
       to: 'Mar 2020',
     },
