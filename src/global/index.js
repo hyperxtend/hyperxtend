@@ -15,7 +15,7 @@ export const events = [
     role: 'Office Administration',
     location: 'African Secret',
     content:
-      'During High School I worked as an Office administrator for a food company. My responsibilities were organizing meetings, stock take, creating production roadmaps & reports',
+      'During High School I worked as an Office administrator for a food technology company. My day-to-day responsibilities were to organizing meetings, stock take, order & organize equipment & ingredients. I also had to generate weekly progress reports',
   },
   {
     date: {
@@ -25,7 +25,7 @@ export const events = [
     role: 'Fashion Design Student',
     location: 'Design Academy of Fashion (DAF)',
     content:
-      'My initial career path was Fashion Design, which i pursued after graduating High School. During my time at DAF I learned pattern making, sewing, garment construction & technical designing. But by the end of the 1st semester I had decided to change career paths & find my niche',
+      'Once I graduated High School I pursued Fashion Design degree at DAF. I learned pattern making, sewing, garment construction & technical designing. By the end of the 1st semester I had decided to drop out and figure out what I wanted to do with my life',
   },
   {
     date: {
@@ -35,7 +35,7 @@ export const events = [
     role: 'Brand Ambassador',
     location: 'Perfect Solutions',
     content:
-      'After changing career paths I decided to work for an events company, where I done promotions, merchandise sales, stock take, waitering, bartending & social media marketing - and so much more. Being a Brand Ambassador you had to learn to act & think on your feet by fulfilling a role where you were needed',
+      'While figuring what I wanted I started working for an events company – as Brand Ambassador you had to learn to act & think on your feet & fulfil any role. Roles including promotions, merchandise sales, customer relations, stock take, waitering, bartending & social media marketing - and so much more',
   },
   {
     date: {
@@ -45,7 +45,7 @@ export const events = [
     role: 'Coding Student',
     location: 'Life Choices / HyperionDev',
     content:
-      'It was at Life Choices where I 1st started coding. We had be taken through different course materials which focused on programming, software development & utilising different technologies in order to start a career in IT. I learned various programming languages, built sites & applications & problem solve real life scenarios using software & technology',
+      'It was at Life Choices when 1st started to code. I had be taken through these coding bootcamp courses, filled with various topics which focused on programming, software development & utilising different technologies to problem solve and build websites & applications. I learned basis of various programming languages & problem solve real life scenarios using code',
   },
   {
     date: {
@@ -55,7 +55,7 @@ export const events = [
     role: 'Freelancing',
     location: 'Cape Town',
     content:
-      'Straight after getting certified with Life Choices I was looking for work, but I had kept do side jobs like small sites for businesses, designed flyers for events & even went back as a Brand Ambassador a few times just to keep busy',
+      'After Life Choices I was busy looking for internships & kept doing side jobs - like small sites for businesses, designed flyers for events & even went back as a Brand Ambassador a few times. It was during this limbo I got an internship opportunity',
   },
   {
     date: {
@@ -65,30 +65,50 @@ export const events = [
     role: 'Software Developer - Intern',
     location: 'Skywalker Innovations',
     content:
-      'I was interning at Skywalker Innovations for 2 months busy building a fullstack application to gauge my skill set. I received an offer for an internship at Global Kinetic which had more opportunity for me - Skywalker told me to go for it',
+      'My 1st internship was at Skywalker Innovations - 2 months busy building a fullstack application to gauge my skill set. During this assessment period I received an offer for an internship at Global Kinetic. After deliberating and even speaking to my Manager at Skywalker - there was more opportunity for me at GK',
   },
   {
     date: {
-      from: 'March 2020',
-      to: 'Current Day',
+      from: 'Mar 2020',
+      to: 'Nov 2020',
     },
-    role: 'Software Engineer',
+    role: 'Software Developer - Intern',
     location: 'Global Kinetic',
     content:
-      'I started at GK as in intern which was an 8 month process of me upskilling myself - becoming more proficient with the tech stacks I utilise, working with business requirements & collaboration with a team. At this time I started on the Bidvest project, in which I became the Junior developer for the project. As time went on I continued working on my craft becoming an Intermediate & was given a platform to manager. As an Intermediate Engineer my role is to bring features to development, take features to production, fix bugs, project architecture, contribute to company standards, 3rd party integration and list goes on in my resume',
+      'I started at GK as an intern - a 8 month process of majorly upskilling myself. During my internship I worked on  my proficiency within the programming languages I utilise - working with frameworks, APIs, Data Bases & scripting pipelines. I was also onboarded into a delivery team & got to work with business requirements & collaboration with the project delivery team.',
+  },
+  {
+    date: {
+      from: 'Dec 2020',
+      to: 'May 2022',
+    },
+    role: 'Jnr. Software Developer',
+    location: 'Global Kinetic',
+    content:
+      'At this point I was a full-time Jnr. developer for a delivery project - the Bidvest project. As time went on I continued upskilling & became responsible for fixing bugs, taking business requirements & turning them into technical features, documentation, working with the SDLC & Agile, production & staging deployments, DevOps & code quality. There are many facets to software development - glad I get to experience them',
+  },
+  {
+    date: {
+      from: 'Apr 2022',
+      to: 'Current Day',
+    },
+    role: 'Intermediate Software Engineer',
+    location: 'Global Kinetic',
+    content:
+      'Currently as an Intermediate Software Engineer I still hold all my responsibilities with a few new ones - responsibility for a platform, contributing to coding conventions, researching innovative solutions, project architecture, tech stack standards & executing team design sessions. Theres more to the job, so ask me about it - I really enjoy what I do.',
   },
 ];
 
 export const aboutAlex = [
   { question: 'Fullname:', answer: 'Alex Joshua' },
-  { question: 'Age:', answer: '23 but going 30' },
+  { question: 'Age:', answer: '23 but going on 30' },
   {
     question: 'Occupation:',
-    answer: 'I pretty much use the internet to build the internet',
+    answer: 'I use the internet to build the internet',
   },
   {
     question: 'Location:',
-    answer: 'Besides the constant state of anxiety I live in Cape Town',
+    answer: 'Besides the constant state of anxiety, I live in Cape Town',
   },
   {
     question: ' Drivers License:',
@@ -96,12 +116,12 @@ export const aboutAlex = [
   },
   {
     question: 'Advice:',
-    answer: 'Learn from the mistakes of other who listen to you',
+    answer: 'Learn from the mistakes of others who listen to you',
   },
   {
     question: 'Hobbies:',
     answer:
-      'I enjoy hiking, nature, traveling, art, music and all the other, Instagramy stuff',
+      'I enjoy hiking, nature, traveling, art, music and all that other Instagramy stuff',
   },
 
   { question: 'Favorite color:', answer: 'really ?' },
