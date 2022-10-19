@@ -95,7 +95,7 @@ export const events = [
     role: 'Intermediate Software Engineer',
     location: 'Global Kinetic',
     content:
-      'Currently as an Intermediate Software Engineer I still hold all my responsibilities with a few new ones - responsibility for a platform, contributing to coding conventions, researching innovative solutions, project architecture, tech stack standards & executing team design sessions. Theres more to the job, so ask me about it - I really enjoy what I do.',
+      'Currently as an Intermediate Software Engineer I still hold all my responsibilities with a few new ones - ownership for a platform, contributing to coding conventions, researching innovative solutions, project architecture, tech stack standards & executing team design sessions. Theres more to the job, so ask me about it - I really enjoy what I do.',
   },
 ];
 
