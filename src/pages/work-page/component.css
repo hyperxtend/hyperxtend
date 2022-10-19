@@ -24,6 +24,7 @@ h5 {
 }
 
 .timeline ul {
+  padding-bottom: 30px;
   background: rgba(240, 240, 240, 0.8);
 }
 
