@@ -34,37 +34,6 @@ export const IconsContainer = styled.div`
   }
 `;
 
-export const StyledLink = styled.a`
-  color: #fff;
-  padding-top: 25px;
-  &:hover {
-    height: 60px;
-    width: 60px;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: sticky;
-    text-decoration: none;
-    padding-bottom: 50px;
-  }
-  &:hover:nth-child(1) {
-    background-color: #000;
-  }
-  &:hover:nth-child(2) {
-    background-color: #1da1f2;
-  }
-  &:hover:nth-child(3) {
-    background-color: #0a66c2;
-  }
-  &:hover:nth-child(4) {
-    background-color: #c32aa3;
-  }
-  &:hover:nth-child(5) {
-    background-color: #35465d;
-  }
-`;
 export const DetailsContainer = styled.div`
   color: #000;
   background: #fff;

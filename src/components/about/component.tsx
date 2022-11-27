@@ -1,19 +1,17 @@
-import React from 'react';
-import './component.css';
+import { useNavigate } from 'react-router-dom';
+
 import {
   GITHUB_PROFILE,
   LINKEDIN_PROFILE,
   TWITTER_PROFILE,
-  TUMBLR_PROFILE,
+  BEHANCE_PROFILE,
   INSTAGRAM_PROFILE,
 } from '../../global';
 import { ABOUT } from '../../routes/urls';
-import { useNavigate } from 'react-router-dom';
 
 import {
   StyledImage,
   IconsContainer,
-  StyledLink,
   DetailsContainer,
   ButtonContainer,
   StyledButton,
@@ -21,6 +19,9 @@ import {
   GetInTouchContainer,
   GetInTouchText,
 } from './styles';
+
+import './component.css';
+import LinkIcon from '../link-icon';
 
 const AlexJoshua = require('../../assets/picture-of-me.jpg');
 const CVofAlexJ = require('../../external-file/cv-of-alex-j-2022.docx');
@@ -37,46 +38,32 @@ const About = () => {
             alt="image-of-me"
           />
           <IconsContainer>
-            <StyledLink
+            <LinkIcon
               href={GITHUB_PROFILE}
               id="github-icon"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa fa-github fa-2x" aria-hidden="true"></i>
-            </StyledLink>
-            <StyledLink
+              iconClass="fa fa-github fa-2x"
+            />
+            <LinkIcon
               href={TWITTER_PROFILE}
               id="twitter-icon"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa fa-twitter fa-2x" aria-hidden="true"></i>
-            </StyledLink>
-            <StyledLink
+              iconClass="fa fa-twitter fa-2x"
+            />
+            <LinkIcon
               href={LINKEDIN_PROFILE}
               id="linkedin-icon"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-            </StyledLink>
-            <StyledLink
+              iconClass="fa fa-linkedin fa-2x"
+            />
+
+            <LinkIcon
               href={INSTAGRAM_PROFILE}
               id="insta-icon"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa fa-instagram fa-2x" aria-hidden="true"></i>
-            </StyledLink>
-            <StyledLink
-              href={TUMBLR_PROFILE}
-              id="tumblr-icon"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa fa-tumblr fa-2x" aria-hidden="true"></i>
-            </StyledLink>
+              iconClass="fa fa-instagram fa-2x"
+            />
+            <LinkIcon
+              href={BEHANCE_PROFILE}
+              id="behance-icon"
+              iconClass="fa fa-behance fa-2x"
+            />
           </IconsContainer>
           <GetInTouchContainer className="get-in-touch-container">
             <SVGContainer>
