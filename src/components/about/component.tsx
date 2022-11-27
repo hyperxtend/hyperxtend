@@ -1,9 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import './component.css';
-import AlexJoshua from '../../assets/picture-of-me.jpg';
-import CVofAlexJ from '../../external-file/cv-of-alex-j-2022.docx';
-import styled from 'styled-components';
 import {
   GITHUB_PROFILE,
   LINKEDIN_PROFILE,
@@ -14,128 +10,20 @@ import {
 import { ABOUT } from '../../routes/urls';
 import { useNavigate } from 'react-router-dom';
 
-const StyledImage = styled.img`
-  filter: grayscale(100%) brightness(65%);
-  transition: transform 0.8s, filter 0.8s ease-in-out;
-  transition-delay: 3s;
-  transform-origin: center center;
-  &:hover {
-    filter: grayscale(0%) brightness(100%);
-    transition: 1s ease-in-out;
-  }
+import {
+  StyledImage,
+  IconsContainer,
+  StyledLink,
+  DetailsContainer,
+  ButtonContainer,
+  StyledButton,
+  SVGContainer,
+  GetInTouchContainer,
+  GetInTouchText,
+} from './styles';
 
-  @media only screen and (max-width: 766px) {
-    marign-top: 0.5rem
-    width: 80%;
-  }
-`;
-
-const IconsContainer = styled.div`
-  position: absolute;
-  fill: #fff;
-  color: #fff;
-  height: 130px;
-  top: 150px;
-  left: 10px;
-  width: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-
-  @media only screen and (max-width: 766px) {
-    top: 650px;
-  }
-`;
-
-const StyledLink = styled.a`
-  color: #fff;
-  padding-top: 25px;
-  &:hover {
-    height: 60px;
-    width: 60px;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: sticky;
-    text-decoration: none;
-    padding-bottom: 50px;
-  }
-  &:hover:nth-child(1) {
-    background-color: #000;
-  }
-  &:hover:nth-child(2) {
-    background-color: #1da1f2;
-  }
-  &:hover:nth-child(3) {
-    background-color: #0a66c2;
-  }
-  &:hover:nth-child(4) {
-    background-color: #c32aa3;
-  }
-  &:hover:nth-child(5) {
-    background-color: #35465d;
-  }
-`;
-const DetailsContainer = styled.div`
-  color: #000;
-  background: #fff;
-  text-align: left;
-  max-width: 920px;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  a {
-    color: #000;
-    text-decoration: none;
-  }
-
-  button:nth-child(2) {
-    margin-left: 10px;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    height: 6rem;
-    justify-content: space-around;
-    button:nth-child(2) {
-      margin-left: 0px;
-    }
-  }
-`;
-
-const StyledButton = styled(Button)`
-  &:hover {
-    transform: translateY(-3px);
-  }
-`;
-const SVGContainer = styled.div`
-  width: 136px;
-  height: 90px;
-  transform: scale(-1, 1);
-  margin-left: 30px;
-`;
-
-const GetInTouchContainer = styled.div`
-  display: flex;
-  padding-top: 5px;
-`;
-
-const GetInTouchText = styled.h5`
-  display: flex;
-  position: relative;
-  right: 80px;
-  align-items: center;
-  height: 50%;
-  font-weight: 400;
-`;
+const AlexJoshua = require('../../assets/picture-of-me.jpg');
+const CVofAlexJ = require('../../external-file/cv-of-alex-j-2022.docx');
 
 const About = () => {
   const navigate = useNavigate();
@@ -213,14 +101,15 @@ const About = () => {
           <div className="about-content">
             <p>An experienced Software Developer & Designer</p>
             <p>
-              I consider myself an tenacious, innovative & systematic individual
-              with proficient problem-solving skills.
+              I consider myself an tenacious & innovative individual with
+              proficient problem-solving skills.
               <br />
-              Bringing value, creativity & quality to any team or project.
+              Bringing value, creativity & quality to my projects - I love
+              sustainability
             </p>
             <p>
-              I'm not afraid of a challenge - my approach is simple & results
-              driven
+              I'm not afraid of a challenge - my approach is fun, simple &
+              results driven
             </p>
             <ButtonContainer className="about-me-button-container">
               <StyledButton variant="outline-dark">
