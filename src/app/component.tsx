@@ -9,9 +9,9 @@ import { BASE_URL } from '../routes/urls';
 import NavigationRoutes from '../routes';
 
 const App = () => {
-  const [toggle, setNavToggle] = React.useState(false);
+  const [toggle, setNavToggle] = React.useState<boolean>(false);
 
-  const [isLanding, setIsLanding] = React.useState(true);
+  const [isLanding, setIsLanding] = React.useState<boolean>(true);
 
   if (isLanding) {
     setTimeout(() => setIsLanding(false), 3600);
@@ -22,7 +22,7 @@ const App = () => {
     <BrowserRouter basename={BASE_URL}>
       <NavBar toggle={toggle} toggleNav={setNavToggle} />
       <NavigationRoutes toggle={toggle} setNavToggle={setNavToggle} />
-      {!toggle && <ContactFooter />}
+      {!toggle ? <ContactFooter /> : null}
     </BrowserRouter>
   );
 };
