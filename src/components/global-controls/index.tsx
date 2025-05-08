@@ -22,7 +22,7 @@ export default function GlobeControls({
 }: GlobeControlsProps) {
   return (
     <>
-      <div className="absolute bottom-12 right-4 flex flex-col items-end">
+      <div className={`absolute ${isMobile ? 'bottom-24' : 'bottom-4'} right-4 flex flex-col items-end`}>
         {showHelp && (
           <div className="bg-black bg-opacity-80 text-white text-xs md:text-sm p-2 md:p-3 mb-2 rounded-md border border-white-500 shadow-lg">
             <p className="font-bold">Select <span className="text-red-500">PINS</span> to explore more details</p>
