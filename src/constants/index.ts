@@ -89,12 +89,12 @@ export const PROJECTS_LNG = 151.2093;
 // Contact Section
 export const CONTACT_ID = "contact";
 export const CONTACT_TITLE = "Contact";
-export const CONTACT_DESCRIPTION = "I'm always interested in new opportunities, collaborations, or just connecting with fellow developers, designers & creatives";
+export const CONTACT_DESCRIPTION = "I'm interested in new opportunities, collaborations, or just connecting with fellow developers, designers & creatives";
 export const CONTACT_CONTENT = {
   email: "ialexjoshua@gmail.com",
   linkedin: "https://www.linkedin.com/in/alex-joshua-80817018b/",
   github: "https://github.com/hyperxtend",
-  availability: "Permanently employed, but always open to freelance projects and consulting opportunities.",
+  availability: "Permanently employed, but open to freelance projects and consulting opportunities.",
   preferredContact: "Email is the best way to reach me",
   location: "Cape Town, South Africa - available for remote work or relocation",
 };
