@@ -84,7 +84,7 @@ export default function EarthGlobe({ portfolioSections = [] }: EarthGlobeProps) 
                 {currentSection?.title}
               </h2>
               <button
-                className="text-gray-400 hover:text-red-500 transition-colors text-lg"
+                className="text-gray-400 hover:text-red-500 transition-colors text-lg hover:cursor-pointer"
                 onClick={() => {
                   setActiveSection(null);
                   setExpanded(false);
@@ -111,7 +111,7 @@ export default function EarthGlobe({ portfolioSections = [] }: EarthGlobeProps) 
 
             <div className="flex justify-end mt-6">
               <button
-                className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded text-white text-sm transition-colors"
+                className="px-4 py-2 bg-gray-700 hover:bg-gray-600 hover:cursor-pointer rounded text-white text-sm transition-colors"
                 onClick={() => {
                   setActiveSection(null);
                   setExpanded(false);

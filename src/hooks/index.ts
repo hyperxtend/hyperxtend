@@ -255,9 +255,9 @@ export function useGlobe({
       earthGroup.add(labelHolder);
 
       const labelDiv = document.createElement('div');
-      labelDiv.className = 'absolute px-2 py-1 text-xs md:text-sm bg-black bg-opacity-80 text-white rounded-md pointer-events-none opacity-0 transform -translate-x-1/2 -translate-y-full';
+      labelDiv.className = 'absolute px-2 py-1 text-xs md:text-sm bg-black pointer bg-opacity-80 text-white rounded-md pointer-events-pointer opacity-0 transform -translate-x-1/2 -translate-y-full';
       labelDiv.innerHTML = `
-        <div class="relative">
+        <div class="relative hover:cursor-pointer">
           <div class="font-bold">${section.title}</div>
           <div class="absolute left-1/2 bottom-0 transform translate-x-[-50%] translate-y-[95%] border-solid border-8 border-transparent border-t-black border-opacity-80"></div>
         </div>
@@ -266,7 +266,7 @@ export function useGlobe({
       labelDiv.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.5)';
       labelDiv.style.border = '1px solid rgba(255, 51, 51, 0.6)';
       labelDiv.style.zIndex = '1000';
-      labelDiv.style.pointerEvents = 'none'; // Ensure labels don't block touches
+      labelDiv.style.pointerEvents = 'pointer';
       mountRef.current.appendChild(labelDiv);
 
       pinHead.userData.labelElement = labelDiv;
@@ -299,14 +299,18 @@ export function useGlobe({
         isHoveringNow = true;
         if (marker.material instanceof THREE.MeshPhongMaterial) {
           marker.material.color.set(0xffcc00);
+          document.body.style.cursor = 'pointer';
         }
         if (marker.material instanceof THREE.MeshPhongMaterial) {
           marker.material.emissive.set(0x553300);
         }
         marker.scale.set(1.2, 1.2, 1.2);
         marker.userData.isHovered = true;
+        document.body.style.cursor = 'pointer';
+
       } else {
         document.body.style.cursor = controlsRef.current?.enabled ? 'default' : 'grabbing';
+
       }
 
       if (isHoveringNow !== isHovering) {
