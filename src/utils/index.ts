@@ -25,25 +25,60 @@ export function updateLabelPositions(markers: THREE.Mesh[], camera: THREE.Camera
 }
 
 export function createStarryBackground(scene: THREE.Scene): void {
-  const starGeometry = new THREE.BufferGeometry();
-  const starCount = 1000;
-  const positions = new Float32Array(starCount * 3);
+  // Create stars - responsive count based on device
+  const starsGeometry = new THREE.BufferGeometry();
+  const starsMaterial = new THREE.PointsMaterial({
+    color: 0xffffff,
+    size: 0.1,
+    transparent: true
+  });
 
-  for (let i = 0; i < starCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 2000;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 2000;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 2000;
+  const starsVertices = [];
+  // Fewer stars on mobile for performance
+  const starsCount = window.innerWidth < 768 ? 1000 : 2000;
+
+  for (let i = 0; i < starsCount; i++) {
+    // Create stars in a sphere around the scene
+    const radius = Math.random() * 90 + 30;  // Between 30 and 120
+    const theta = Math.random() * Math.PI * 2;  // 0 to 2π
+    const phi = Math.random() * Math.PI;  // 0 to π
+
+    const x = radius * Math.sin(phi) * Math.cos(theta);
+    const y = radius * Math.sin(phi) * Math.sin(theta);
+    const z = radius * Math.cos(phi);
+
+    starsVertices.push(x, y, z);
   }
 
-  starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  const starMaterial = new THREE.PointsMaterial({
+  starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
+  const stars = new THREE.Points(starsGeometry, starsMaterial);
+  scene.add(stars);
+
+  // Create larger twinkling stars - fewer on mobile
+  const twinklingStarsGeometry = new THREE.BufferGeometry();
+  const twinklingStarsMaterial = new THREE.PointsMaterial({
     color: 0xffffff,
     size: 0.2,
-    transparent: true,
-    opacity: 0.8
-  });
-  starMaterial.userData = { twinkling: true };
-  const stars = new THREE.Points(starGeometry, starMaterial);
-  stars.userData = { twinkling: true };
-  scene.add(stars);
+     transparent: true
+   });
+
+  const twinklingStarsVertices = [];
+  const twinklingStarsCount = window.innerWidth < 768 ? 50 : 100;
+
+  for (let i = 0; i < twinklingStarsCount; i++) {
+    const radius = Math.random() * 80 + 40;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.random() * Math.PI;
+
+    const x = radius * Math.sin(phi) * Math.cos(theta);
+    const y = radius * Math.sin(phi) * Math.sin(theta);
+    const z = radius * Math.cos(phi);
+
+    twinklingStarsVertices.push(x, y, z);
+  }
+
+  twinklingStarsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(twinklingStarsVertices, 3));
+  const twinklingStars = new THREE.Points(twinklingStarsGeometry, twinklingStarsMaterial);
+  twinklingStars.userData = { twinkling: true };
+  scene.add(twinklingStars);
 }
