@@ -191,7 +191,6 @@ function renderExperienceContent(content: ExperienceContent) {
 function renderProjectsContent(content: ProjectsContent) {
   return (
     <div className="text-sm md:text-base">
-      <h3 className="text-sm md:text-base font-bold mb-2">Featured Projects</h3>
       <div className="space-y-3">
         {content.featuredProjects.map((project, index) => (
           <div key={index} className="border-b border-gray-700 pb-2">
