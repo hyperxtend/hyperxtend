@@ -1,7 +1,7 @@
 import EarthGlobe from "@/components/globe";
-import { PROJECTS } from "@/constants";
+import { PORTFOLIO_SECTIONS } from "@/constants";
 
 export default function Home() {
-  return <EarthGlobe portfolioSections={PROJECTS} />
+  return <EarthGlobe portfolioSections={PORTFOLIO_SECTIONS} />
 
 }

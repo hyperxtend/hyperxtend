@@ -1,20 +1,18 @@
+import { PortfolioSectionType } from '@/types';
 import { createStarryBackground, latLngToVector3, updateLabelPositions } from '@/utils';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-interface PortfolioSection {
-  id: string;
-  title: string;
-}
-
 interface UseGlobeProps {
   mountRef: React.RefObject<HTMLDivElement>;
-  portfolioSections: PortfolioSection[];
+  portfolioSections: PortfolioSectionType[];
   isHovering: boolean;
   setIsHovering: (hovering: boolean) => void;
   activeSection: string | null;
   setActiveSection: (section: string | null) => void;
+  setShowSections: (show: boolean) => void;
+  setShowHelp: (show: boolean) => void;
 }
 
 export function useGlobe({
@@ -23,7 +21,9 @@ export function useGlobe({
   isHovering,
   setIsHovering,
   activeSection,
-  setActiveSection
+  setActiveSection,
+  setShowSections,
+  setShowHelp
 }: UseGlobeProps) {
   const EARTH_RADIUS = 5;
   const markersRef = useRef<THREE.Mesh[]>([]);
@@ -32,6 +32,50 @@ export function useGlobe({
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const controlsRef = useRef<OrbitControls | null>(null);
   const earthGroupRef = useRef<THREE.Group | null>(null);
+  const isRotatingRef = useRef<boolean>(true);
+  const animationFrameId = useRef<number | null>(null);
+  const touchStartTime = useRef<number | null>(null);
+  const touchStartPos = useRef<{ x: number; y: number } | null>(null);
+
+  const debounce = <T extends (...args: unknown[]) => void>(func: T, wait: number) => {
+    let timeout: NodeJS.Timeout;
+    return (...args: Parameters<T>) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), wait);
+    };
+  };
+
+  const animateCameraToPosition = (targetPosition: THREE.Vector3) => {
+    if (!cameraRef.current || !controlsRef.current) return;
+    const startPosition = cameraRef.current.position.clone();
+    const duration = window.innerWidth < 768 ? 1000 : 1200;
+    const startTime = Date.now();
+
+    const updateCamera = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 4);
+      cameraRef.current!.position.lerpVectors(startPosition, targetPosition, easeProgress);
+      controlsRef.current!.target.set(0, 0, 0);
+      controlsRef.current!.update();
+      updateLabelPositions(markersRef.current, cameraRef.current!);
+      if (progress < 1) {
+        animationFrameId.current = requestAnimationFrame(updateCamera);
+      }
+    };
+    updateCamera();
+  };
+
+  const gotoPin = (lat: number, lng: number, sectionId: string) => {
+    const markerPosition = latLngToVector3(lat, lng, EARTH_RADIUS + 0.05);
+    const direction = markerPosition.clone().normalize();
+    const targetPosition = direction.multiplyScalar(window.innerWidth < 768 ? 18 : 15);
+    animateCameraToPosition(targetPosition);
+    setActiveSection(sectionId);
+    isRotatingRef.current = false;
+    setShowSections(false);
+    setShowHelp(false);
+  };
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -72,6 +116,13 @@ export function useGlobe({
     controls.zoomSpeed = isMobile ? 0.8 : 0.6;
     controls.autoRotate = false;
     controls.autoRotateSpeed = 0.2;
+
+    controls.addEventListener('start', () => {
+      document.body.style.cursor = 'grabbing';
+    });
+    controls.addEventListener('end', () => {
+      document.body.style.cursor = isHovering ? 'pointer' : 'default';
+    });
 
     createStarryBackground(scene);
 
@@ -168,21 +219,8 @@ export function useGlobe({
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
 
-    const locationCoordinates = [
-      { title: "About Me", lat: 40.7128, lng: -74.006 },
-      { name: "Skills", lat: 51.5074, lng: -0.1278 },
-      { name: "Experience", lat: 35.6762, lng: 139.6503 },
-      { name: "Projects", lat: -33.8688, lng: 151.2093 },
-      { name: "Contact", lat: 48.8566, lng: 2.3522 }
-    ];
-
     portfolioSections.forEach((section, index) => {
-      const location = locationCoordinates[index] || {
-        lat: 0,
-        lng: 360 * (index / portfolioSections.length)
-      };
-
-      const markerPosition = latLngToVector3(location.lat, location.lng, EARTH_RADIUS + 0.05);
+      const markerPosition = latLngToVector3(section.lat, section.lng, EARTH_RADIUS + 0.05);
       const markerGroup = new THREE.Group();
 
       const pinScale = isMobile ? 1.3 : 1.0;
@@ -238,51 +276,76 @@ export function useGlobe({
     });
     markersRef.current = markers;
 
-    const onMouseMove = (event: MouseEvent) => {
+    const onMouseMove = debounce((event: MouseEvent) => {
       if (!rendererRef.current || !cameraRef.current) return;
       mouse.x = (event.clientX / containerWidth) * 2 - 1;
       mouse.y = -(event.clientY / containerHeight) * 2 + 1;
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObjects(markers);
+      let isHoveringNow = false;
+
       markers.forEach(marker => {
         marker.material.color.set(0xff3333);
         marker.material.emissive.set(0x331111);
         marker.scale.set(1, 1, 1);
         marker.userData.isHovered = false;
       });
+
       if (intersects.length > 0) {
         const marker = intersects[0].object as THREE.Mesh;
         document.body.style.cursor = 'pointer';
-        setIsHovering(true);
+        isHoveringNow = true;
         marker.material.color.set(0xffcc00);
         marker.material.emissive.set(0x553300);
         marker.scale.set(1.2, 1.2, 1.2);
         marker.userData.isHovered = true;
       } else {
-        document.body.style.cursor = 'default';
-        setIsHovering(false);
+        document.body.style.cursor = controlsRef.current?.enabled ? 'default' : 'grabbing';
+      }
+
+      if (isHoveringNow !== isHovering) {
+        setIsHovering(isHoveringNow);
       }
       updateLabelPositions(markers, camera);
-    };
+    }, 16);
 
     const onTouchStart = (event: TouchEvent) => {
       event.preventDefault();
       if (event.touches.length !== 1 || !cameraRef.current || !rendererRef.current) return;
       const touch = event.touches[0];
-      mouse.x = (touch.clientX / containerWidth) * 2 - 1;
-      mouse.y = -(touch.clientY / containerHeight) * 2 + 1;
-      raycaster.setFromCamera(mouse, camera);
-      const intersects = raycaster.intersectObjects(markers);
-      if (intersects.length > 0) {
-        const marker = intersects[0].object as THREE.Mesh;
-        const sectionId = marker.userData.sectionId;
-        const markerWorldPos = new THREE.Vector3();
-        marker.getWorldPosition(markerWorldPos);
-        const direction = markerWorldPos.clone().normalize();
-        const targetPosition = direction.multiplyScalar(isMobile ? 18 : 15);
-        animateCameraToPosition(targetPosition);
-        setActiveSection(sectionId);
+      touchStartTime.current = Date.now();
+      touchStartPos.current = { x: touch.clientX, y: touch.clientY };
+    };
+
+    const onTouchEnd = (event: TouchEvent) => {
+      if (!cameraRef.current || !rendererRef.current || !touchStartTime.current || !touchStartPos.current) return;
+      const touch = event.changedTouches[0];
+      const touchEndTime = Date.now();
+      const touchDuration = touchEndTime - touchStartTime.current;
+      const touchDistance = Math.sqrt(
+        Math.pow(touch.clientX - touchStartPos.current.x, 2) +
+        Math.pow(touch.clientY - touchStartPos.current.y, 2)
+      );
+
+      if (touchDuration < 300 && touchDistance < 10) {
+        mouse.x = (touch.clientX / containerWidth) * 2 - 1;
+        mouse.y = -(touch.clientY / containerHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(markers);
+        if (intersects.length > 0) {
+          const marker = intersects[0].object as THREE.Mesh;
+          const sectionId = marker.userData.sectionId;
+          const markerWorldPos = new THREE.Vector3();
+          marker.getWorldPosition(markerWorldPos);
+          const direction = markerWorldPos.clone().normalize();
+          const targetPosition = direction.multiplyScalar(isMobile ? 18 : 15);
+          animateCameraToPosition(targetPosition);
+          setActiveSection(sectionId);
+          isRotatingRef.current = false;
+        }
       }
+      touchStartTime.current = null;
+      touchStartPos.current = null;
     };
 
     const onClick = (event: MouseEvent) => {
@@ -300,28 +363,8 @@ export function useGlobe({
         const targetPosition = direction.multiplyScalar(isMobile ? 18 : 15);
         animateCameraToPosition(targetPosition);
         setActiveSection(sectionId);
+        isRotatingRef.current = false;
       }
-    };
-
-    const animateCameraToPosition = (targetPosition: THREE.Vector3) => {
-      if (!cameraRef.current || !controlsRef.current) return;
-      const startPosition = cameraRef.current.position.clone();
-      const duration = isMobile ? 1000 : 1200;
-      const startTime = Date.now();
-
-      const updateCamera = () => {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easeProgress = 1 - Math.pow(1 - progress, 4);
-        cameraRef.current!.position.lerpVectors(startPosition, targetPosition, easeProgress);
-        controlsRef.current!.target.set(0, 0, 0);
-        controlsRef.current!.update();
-        updateLabelPositions(markers, cameraRef.current!);
-        if (progress < 1) {
-          requestAnimationFrame(updateCamera);
-        }
-      };
-      updateCamera();
     };
 
     const handleResize = () => {
@@ -338,17 +381,18 @@ export function useGlobe({
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('click', onClick);
     mountRef.current.addEventListener('touchstart', onTouchStart, { passive: false });
+    mountRef.current.addEventListener('touchend', onTouchEnd, { passive: false });
 
     const rotationSpeed = 0.0003;
     let lastTime = 0;
 
     const animate = (time: number) => {
       if (!sceneRef.current || !cameraRef.current || !rendererRef.current || !controlsRef.current || !earthGroupRef.current) return;
-      requestAnimationFrame(animate);
+      animationFrameId.current = requestAnimationFrame(animate);
       const delta = lastTime ? (time - lastTime) / 1000 : 0.016;
       lastTime = time;
 
-      if (!isHovering && !controlsRef.current.autoRotate) {
+      if (isRotatingRef.current && !isHovering && !controlsRef.current.autoRotate) {
         const smoothDelta = Math.min(delta, 0.05);
         earthGroupRef.current.rotation.y += rotationSpeed * smoothDelta * 60;
       }
@@ -370,30 +414,62 @@ export function useGlobe({
       rendererRef.current.render(sceneRef.current, cameraRef.current);
     };
 
-    animate(0);
+    animationFrameId.current = requestAnimationFrame(animate);
 
     return () => {
+      if (animationFrameId.current !== null) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('click', onClick);
       if (mountRef.current) {
         mountRef.current.removeEventListener('touchstart', onTouchStart);
+        mountRef.current.removeEventListener('touchend', onTouchEnd);
       }
+
       markers.forEach(marker => {
         if (marker.userData.labelElement && mountRef.current) {
           mountRef.current.removeChild(marker.userData.labelElement);
         }
       });
+
       if (mountRef.current && rendererRef.current) {
         mountRef.current.removeChild(rendererRef.current.domElement);
       }
-      scene.traverse((object) => {
-        if (object instanceof THREE.Mesh) {
-          object.geometry.dispose();
-          if (object.material.map) object.material.map.dispose();
-          object.material.dispose();
-        }
-      });
+
+      if (sceneRef.current) {
+        sceneRef.current.traverse((object) => {
+          if (object instanceof THREE.Mesh) {
+            if (object.geometry) object.geometry.dispose();
+            if (object.material) {
+              if (Array.isArray(object.material)) {
+                object.material.forEach(mat => {
+                  if (mat.map) mat.map.dispose();
+                  mat.dispose();
+                });
+              } else {
+                if (object.material.map) object.material.map.dispose();
+                object.material.dispose();
+              }
+            }
+          }
+        });
+      }
+
+      if (rendererRef.current) {
+        rendererRef.current.dispose();
+        rendererRef.current.forceContextLoss();
+        rendererRef.current = null;
+      }
+
+      sceneRef.current = null;
+      cameraRef.current = null;
+      controlsRef.current = null;
+      earthGroupRef.current = null;
     };
-  }, [portfolioSections, isHovering, activeSection, setIsHovering, setActiveSection]);
+  }, []);
+
+  return { gotoPin };
 }
