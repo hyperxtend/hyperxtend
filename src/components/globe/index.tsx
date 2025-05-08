@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import { useGlobe } from '@/hooks';
 import { useEffect, useRef, useState } from 'react';
@@ -38,17 +39,19 @@ export default function EarthGlobe({ portfolioSections = [] }: EarthGlobeProps) 
   }, []);
 
   useGlobe({
-    mountRef,
+    mountRef: mountRef as React.RefObject<HTMLDivElement>,
     portfolioSections,
     isHovering,
     setIsHovering,
     activeSection,
-    setActiveSection
+    setActiveSection,
+    setShowSections,
+    setShowHelp
   });
 
   const currentSection = portfolioSections.find(s => s.id === activeSection);
   const { gotoPin } = useGlobe({
-    mountRef,
+    mountRef: mountRef as React.RefObject<HTMLDivElement>,
     portfolioSections,
     isHovering,
     setIsHovering,

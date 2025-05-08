@@ -20,7 +20,6 @@ export function useGlobe({
   portfolioSections,
   isHovering,
   setIsHovering,
-  activeSection,
   setActiveSection,
   setShowSections,
   setShowHelp
@@ -219,7 +218,7 @@ export function useGlobe({
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
 
-    portfolioSections.forEach((section, index) => {
+    portfolioSections.forEach((section) => {
       const markerPosition = latLngToVector3(section.lat, section.lng, EARTH_RADIUS + 0.05);
       const markerGroup = new THREE.Group();
 
@@ -276,7 +275,7 @@ export function useGlobe({
     });
     markersRef.current = markers;
 
-    const onMouseMove = debounce((event: MouseEvent) => {
+    const onMouseMove = debounce(((event: MouseEvent) => {
       if (!rendererRef.current || !cameraRef.current) return;
       mouse.x = (event.clientX / containerWidth) * 2 - 1;
       mouse.y = -(event.clientY / containerHeight) * 2 + 1;
@@ -285,8 +284,12 @@ export function useGlobe({
       let isHoveringNow = false;
 
       markers.forEach(marker => {
-        marker.material.color.set(0xff3333);
-        marker.material.emissive.set(0x331111);
+        if (marker.material instanceof THREE.MeshPhongMaterial) {
+          marker.material.color.set(0xff3333);
+        }
+        if (marker.material instanceof THREE.MeshPhongMaterial) {
+          marker.material.emissive.set(0x331111);
+        }
         marker.scale.set(1, 1, 1);
         marker.userData.isHovered = false;
       });
@@ -295,8 +298,12 @@ export function useGlobe({
         const marker = intersects[0].object as THREE.Mesh;
         document.body.style.cursor = 'pointer';
         isHoveringNow = true;
-        marker.material.color.set(0xffcc00);
-        marker.material.emissive.set(0x553300);
+        if (marker.material instanceof THREE.MeshPhongMaterial) {
+          marker.material.color.set(0xffcc00);
+        }
+        if (marker.material instanceof THREE.MeshPhongMaterial) {
+          marker.material.emissive.set(0x553300);
+        }
         marker.scale.set(1.2, 1.2, 1.2);
         marker.userData.isHovered = true;
       } else {
@@ -307,7 +314,7 @@ export function useGlobe({
         setIsHovering(isHoveringNow);
       }
       updateLabelPositions(markers, camera);
-    }, 16);
+    }) as (...args: unknown[]) => void, 16);
 
     const onTouchStart = (event: TouchEvent) => {
       event.preventDefault();
@@ -436,6 +443,7 @@ export function useGlobe({
       });
 
       if (mountRef.current && rendererRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         mountRef.current.removeChild(rendererRef.current.domElement);
       }
 
@@ -469,6 +477,7 @@ export function useGlobe({
       controlsRef.current = null;
       earthGroupRef.current = null;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { gotoPin };
