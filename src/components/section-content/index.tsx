@@ -1,96 +1,11 @@
-
-// Type definitions for different section content structures
-interface AboutContent {
-  bio: string;
-  interests: string[];
-  philosophy: string;
-}
-
-interface SkillItem {
-  name: string;
-  level: number;
-}
-
-interface SkillsContent {
-  technical: SkillItem[];
-  soft: string[];
-  tools: string[];
-}
-
-interface Job {
-  title: string;
-  company: string;
-  period: string;
-  description: string;
-  technologies: string[];
-}
-
-interface Education {
-  degree: string;
-  institution: string;
-  gradYear: string;
-  achievements: string[];
-}
-
-interface ExperienceContent {
-  jobs: Job[];
-  education: Education;
-}
-
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  technologies: string[];
-  link: string;
-  image: string;
-}
-
-interface CaseStudy {
-  title: string;
-  description: string;
-  link: string;
-}
-
-interface ProjectsContent {
-  featuredProjects: Project[];
-  caseStudies: CaseStudy[];
-}
-
-interface ContactContent {
-  email: string;
-  linkedin: string;
-  github: string;
-  twitter: string;
-  availability: string;
-  preferredContact: string;
-  location: string;
-}
-
-type SectionContentType = AboutContent | SkillsContent | ExperienceContent | ProjectsContent | ContactContent;
-
-interface SectionContentProps {
-  sectionId: string;
-  content: SectionContentType;
-}
-
-export default function SectionContent({ sectionId, content }: SectionContentProps) {
-  // Render content based on section ID
-  switch (sectionId) {
-    case 'about':
-      return renderAboutContent(content as AboutContent);
-    case 'skills':
-      return renderSkillsContent(content as SkillsContent);
-    case 'experience':
-      return renderExperienceContent(content as ExperienceContent);
-    case 'projects':
-      return renderProjectsContent(content as ProjectsContent);
-    case 'contact':
-      return renderContactContent(content as ContactContent);
-    default:
-      return <div>No content available</div>;
-  }
-}
+import {
+  ABOUT_ID,
+  CONTACT_ID,
+  EXPERIENCE_ID,
+  PROJECTS_ID,
+  SKILLS_ID,
+} from '@/constants';
+import { AboutContent, ContactContent, ExperienceContent, ProjectsContent, SectionContentProps, SkillsContent } from '@/types';
 
 function renderAboutContent(content: AboutContent) {
   return (
@@ -191,7 +106,6 @@ function renderExperienceContent(content: ExperienceContent) {
 function renderProjectsContent(content: ProjectsContent) {
   return (
     <div className="text-sm md:text-base">
-      <h3 className="text-sm md:text-base font-bold mb-2">Featured Projects</h3>
       <div className="space-y-3">
         {content.featuredProjects.map((project, index) => (
           <div key={index} className="border-b border-gray-700 pb-2">
@@ -283,4 +197,21 @@ function renderContactContent(content: ContactContent) {
       </div>
     </div>
   );
+}
+
+export default function SectionContent({ sectionId, content }: SectionContentProps) {
+  switch (sectionId) {
+    case ABOUT_ID:
+      return renderAboutContent(content as AboutContent);
+    case SKILLS_ID:
+      return renderSkillsContent(content as SkillsContent);
+    case EXPERIENCE_ID:
+      return renderExperienceContent(content as ExperienceContent);
+    case PROJECTS_ID:
+      return renderProjectsContent(content as ProjectsContent);
+    case CONTACT_ID:
+      return renderContactContent(content as ContactContent);
+    default:
+      return <div>No content available</div>;
+  }
 }

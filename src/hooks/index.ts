@@ -33,8 +33,6 @@ export function useGlobe({
   const earthGroupRef = useRef<THREE.Group | null>(null);
   const isRotatingRef = useRef<boolean>(true);
   const animationFrameId = useRef<number | null>(null);
-  const touchStartTime = useRef<number | null>(null);
-  const touchStartPos = useRef<{ x: number; y: number } | null>(null);
 
   const debounce = <T extends (...args: unknown[]) => void>(func: T, wait: number) => {
     let timeout: NodeJS.Timeout;
@@ -222,19 +220,19 @@ export function useGlobe({
       const markerPosition = latLngToVector3(section.lat, section.lng, EARTH_RADIUS + 0.05);
       const markerGroup = new THREE.Group();
 
-      const pinScale = isMobile ? 1.3 : 1.0;
-      const pinStemGeometry = new THREE.CylinderGeometry(0.025 * pinScale, 0.025 * pinScale, 0.3 * pinScale, 8);
+      const pinScale = isMobile ? 1.5 : 1.0; // Increased pin size for mobile
+      const pinStemGeometry = new THREE.CylinderGeometry(0.03 * pinScale, 0.03 * pinScale, 0.4 * pinScale, 8);
       const pinStemMaterial = new THREE.MeshPhongMaterial({ color: 0x333333 });
       const pinStem = new THREE.Mesh(pinStemGeometry, pinStemMaterial);
 
-      const pinHeadGeometry = new THREE.SphereGeometry(0.1 * pinScale, 16, 16);
+      const pinHeadGeometry = new THREE.SphereGeometry(0.15 * pinScale, 16, 16); // Larger pin head
       const pinHeadMaterial = new THREE.MeshPhongMaterial({
         color: 0xff3333,
         emissive: 0x331111,
         shininess: 60
       });
       const pinHead = new THREE.Mesh(pinHeadGeometry, pinHeadMaterial);
-      pinHead.position.y = 0.2 * pinScale;
+      pinHead.position.y = 0.25 * pinScale;
 
       markerGroup.add(pinStem);
       markerGroup.add(pinHead);
@@ -268,6 +266,7 @@ export function useGlobe({
       labelDiv.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.5)';
       labelDiv.style.border = '1px solid rgba(255, 51, 51, 0.6)';
       labelDiv.style.zIndex = '1000';
+      labelDiv.style.pointerEvents = 'none'; // Ensure labels don't block touches
       mountRef.current.appendChild(labelDiv);
 
       pinHead.userData.labelElement = labelDiv;
@@ -316,43 +315,28 @@ export function useGlobe({
       updateLabelPositions(markers, camera);
     }) as (...args: unknown[]) => void, 16);
 
-    const onTouchStart = (event: TouchEvent) => {
+    const onTouch = (event: TouchEvent) => {
       event.preventDefault();
       if (event.touches.length !== 1 || !cameraRef.current || !rendererRef.current) return;
+
       const touch = event.touches[0];
-      touchStartTime.current = Date.now();
-      touchStartPos.current = { x: touch.clientX, y: touch.clientY };
-    };
+      mouse.x = (touch.clientX / containerWidth) * 2 - 1;
+      mouse.y = -(touch.clientY / containerHeight) * 2 + 1;
+      raycaster.setFromCamera(mouse, cameraRef.current);
+      raycaster.params.Mesh.threshold = 0.2; // Increased sensitivity for mobile
+      const intersects = raycaster.intersectObjects(markersRef.current);
 
-    const onTouchEnd = (event: TouchEvent) => {
-      if (!cameraRef.current || !rendererRef.current || !touchStartTime.current || !touchStartPos.current) return;
-      const touch = event.changedTouches[0];
-      const touchEndTime = Date.now();
-      const touchDuration = touchEndTime - touchStartTime.current;
-      const touchDistance = Math.sqrt(
-        Math.pow(touch.clientX - touchStartPos.current.x, 2) +
-        Math.pow(touch.clientY - touchStartPos.current.y, 2)
-      );
-
-      if (touchDuration < 300 && touchDistance < 10) {
-        mouse.x = (touch.clientX / containerWidth) * 2 - 1;
-        mouse.y = -(touch.clientY / containerHeight) * 2 + 1;
-        raycaster.setFromCamera(mouse, camera);
-        const intersects = raycaster.intersectObjects(markers);
-        if (intersects.length > 0) {
-          const marker = intersects[0].object as THREE.Mesh;
-          const sectionId = marker.userData.sectionId;
-          const markerWorldPos = new THREE.Vector3();
-          marker.getWorldPosition(markerWorldPos);
-          const direction = markerWorldPos.clone().normalize();
-          const targetPosition = direction.multiplyScalar(isMobile ? 18 : 15);
-          animateCameraToPosition(targetPosition);
-          setActiveSection(sectionId);
-          isRotatingRef.current = false;
-        }
+      if (intersects.length > 0) {
+        const marker = intersects[0].object as THREE.Mesh;
+        const sectionId = marker.userData.sectionId;
+        const markerWorldPos = new THREE.Vector3();
+        marker.getWorldPosition(markerWorldPos);
+        const direction = markerWorldPos.clone().normalize();
+        const targetPosition = direction.multiplyScalar(isMobile ? 18 : 15);
+        animateCameraToPosition(targetPosition);
+        setActiveSection(sectionId);
+        isRotatingRef.current = false;
       }
-      touchStartTime.current = null;
-      touchStartPos.current = null;
     };
 
     const onClick = (event: MouseEvent) => {
@@ -387,8 +371,7 @@ export function useGlobe({
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('click', onClick);
-    mountRef.current.addEventListener('touchstart', onTouchStart, { passive: false });
-    mountRef.current.addEventListener('touchend', onTouchEnd, { passive: false });
+    mountRef.current.addEventListener('touchstart', onTouch, { passive: false });
 
     const rotationSpeed = 0.0003;
     let lastTime = 0;
@@ -432,8 +415,7 @@ export function useGlobe({
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('click', onClick);
       if (mountRef.current) {
-        mountRef.current.removeEventListener('touchstart', onTouchStart);
-        mountRef.current.removeEventListener('touchend', onTouchEnd);
+        mountRef.current.removeEventListener('touchstart', onTouch);
       }
 
       markers.forEach(marker => {
