@@ -8,7 +8,7 @@ function MobileWarning() {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       </svg>
       <h2 className="text-white text-xl font-bold mb-2">Please Rotate Device</h2>
-      <p className="text-gray-300 mb-3">For the best experience with the Earth Globe, please rotate your device to landscape orientation.</p>
+        <p className="text-gray-300 mb-3">For the best experience with the Globe, please rotate your device to landscape orientation.</p>
       <button 
         className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors"
         onClick={() => {

@@ -23,7 +23,7 @@ export default function EarthGlobe({ portfolioSections = [] }: EarthGlobeProps) 
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [isHovering, setIsHovering] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [showHelp, setShowHelp] = useState(false);
+  const [showHelp, setShowHelp] = useState(true);
   const [showSections, setShowSections] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const mountRef = useRef<HTMLDivElement>(null);
@@ -73,17 +73,25 @@ export default function EarthGlobe({ portfolioSections = [] }: EarthGlobeProps) 
           <div
             className={`bg-gray-800 text-white p-4 md:p-6 rounded-lg shadow-lg border border-gray-700 max-w-[90%] ${expanded ? 'md:max-w-2xl' : 'md:max-w-sm'
               } transition-all duration-300 max-h-[80vh] overflow-y-auto
-                [&::-webkit-scrollbar]:w-2
-                [&::-webkit-scrollbar-track]:bg-gray-100
-                [&::-webkit-scrollbar-thumb]:bg-gray-300
-                dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-                dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500
+          [&::-webkit-scrollbar]:w-2
+          [&::-webkit-scrollbar-track]:bg-gray-100
+          [&::-webkit-scrollbar-thumb]:bg-gray-300
+          dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+          dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500
               `}>
             <div className="flex justify-between items-center mb-3">
               <h2 className="text-lg md:text-xl font-semibold">
                 {currentSection?.title}
               </h2>
-
+              <button
+                className="text-gray-400 hover:text-red-500 transition-colors text-lg"
+                onClick={() => {
+                  setActiveSection(null);
+                  setExpanded(false);
+                }}
+              >
+                ✕
+              </button>
             </div>
 
             {currentSection?.description && (
