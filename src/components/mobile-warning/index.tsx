@@ -8,7 +8,7 @@ function MobileWarning() {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       </svg>
         <h2 className="text-white text-xl font-bold mb-2">Please Note</h2>
-        <p className="text-gray-300 mb-3">For the best experience with the Globe on mobile please zoom into pin in order to view its content</p>
+        <p className="text-gray-300 mb-3">For the best experience on mobile please zoom into pin to select & view its content</p>
       <button 
         className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors"
         onClick={() => {
@@ -18,7 +18,7 @@ function MobileWarning() {
           }
         }}
       >
-        Continue Anyway
+          Continue
       </button>
     </div>
   </div>
