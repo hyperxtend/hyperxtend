@@ -335,6 +335,8 @@ export function useGlobe({
         const targetPosition = direction.multiplyScalar(isMobile ? 18 : 15);
         animateCameraToPosition(targetPosition);
         setActiveSection(sectionId);
+        setShowSections(false);
+        setShowHelp(false);
         isRotatingRef.current = false;
       }
     };
@@ -354,6 +356,8 @@ export function useGlobe({
         const targetPosition = direction.multiplyScalar(isMobile ? 18 : 15);
         animateCameraToPosition(targetPosition);
         setActiveSection(sectionId);
+        setShowSections(false);
+        setShowHelp(false);
         isRotatingRef.current = false;
       }
     };
