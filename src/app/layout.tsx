@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "hyperxtend",
-  description: "A journey through out the wilderness of the web",
+  description: "showcasing my skills on a global level",
 };
 
 export default function RootLayout({
